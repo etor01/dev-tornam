@@ -67,7 +67,7 @@ function TimelineItem({ year, company, role, description }: Omit<ExperienceData,
     return (
         <article className="relative pl-8 md:pl-12 py-1">
             {/* The Timeline Dot - Positioned absolutely to sit on the line */}
-            <div className="absolute -left-[10px] top-2 w-5 h-5 bg-gray-700 rounded-full border-4 border-white shadow-sm ring-1 ring-gray-200"></div>
+            <div className="absolute -left-2.5 top-2 w-5 h-5 bg-gray-700 rounded-full border-4 border-white shadow-sm ring-1 ring-gray-200"></div>
             
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
                 <h3 className="font-bold text-lg text-gray-700">{company}</h3>
