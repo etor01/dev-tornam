@@ -9,7 +9,7 @@ export default function Header() {
                     <li><Link href="#" className="text-gray-700 hover:text-blue-600 transition">About</Link></li>
                     <li><Link href="#" className="text-gray-700 hover:text-blue-600 transition">Experience</Link></li>
                     <li><Link href="#" className="text-gray-700 hover:text-blue-600 transition">Projects</Link></li>
-                    <li><Link href="#" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Let&apos;s talk</Link></li>
+                    <li><Link href="#" className="bg-yellow-500 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-yellow-600 transition font-medium">Let&apos;s talk</Link></li>
                 </ul>
             </nav>
         </header>
