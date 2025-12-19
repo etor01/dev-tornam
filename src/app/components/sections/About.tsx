@@ -1,23 +1,82 @@
 import Link from "next/link";
 
 export default function About() {
+    // Dynamic year calculation is fine here, but keep it simple.
+    const currentYear = new Date().getFullYear();
+
     return (
-        <section className="text-center">
-            
-            <span className="container mx-auto py-4 text-center md:text-left text-gray-800 grid place-items-center grid-cols-1 md:grid-cols-2 h-130">
-                <div>
-                    <h1 className="text-3xl md:text-5xl font-bold md:mb-2 text-yellow-500 text-pretty ">About me</h1>
+        <section className="py-16 px-6 bg-white" id="about">
+            {/* LAYOUT FIX: 
+                1. Replaced <span> with <div>.
+                2. Changed grid-cols-2 to a 12-column grid. 
+                   - On Mobile: Stacked (col-span-12)
+                   - On Desktop: Title takes 4 cols, Content takes 8 cols.
+                   This creates a more "Golden Ratio" look which is more pleasing to the eye.
+            */}
+            <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                
+                {/* LEFT COLUMN: Title (Sticky allows it to stay in view if content is long) */}
+                <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
+                    <h2 className="text-4xl md:text-6xl font-extrabold text-blue-200 tracking-tighter uppercase mb-2">
+                        About
+                    </h2>
+                    <span className="block text-2xl md:text-3xl font-bold text-yellow-500 -mt-4 md:-mt-6 mr-0 md:mr-2">
+                        Me
+                    </span>
                 </div>
 
-                <div>
-                    <h4 className="font-bold">Etornam Kordzo Ahiataku</h4>
-                    <h5 className="text-sm md:text-md font-bold mb-2 text-yellow-500 text-pretty "> <span className="text-gray-400 font-medium">Coding Since</span> 2018 - {new Date().getFullYear()} </h5>
-                    <h4 className="text-pretty font-bold my-2">Christian • Family Guy • Sometimes a Nerd</h4>
-                    <p className="text-base text-balance font-medium text-gray-500">With a foundation in General Science from Keta SHTS, I am currently pursuing my degree at <Link href="https://www.knust.edu.gh" className="text-green-600 hover:font-bold">KNUST</Link>. My journey has been defined by resilience; I believe my background has instilled in me the dedication required to solve complex problems. I value efficiency and clear communication, and I am committed to leveraging these strengths to become a world-class software engineer.</p>
-                    <div className="mt-2 text-sm">Critical Thinker &nbsp; | &nbsp; Team Player &nbsp; | &nbsp;  Adaptability</div>
-                </div>
+                {/* RIGHT COLUMN: Content */}
+                <div className="md:col-span-8 space-y-6 text-center md:text-left">
+                    
+                    {/* Header Info */}
+                    <div>
+                        <h3 className="text-2xl font-bold text-gray-800">Etornam Kordzo Ahiataku</h3>
+                        <p className="text-blue-500 font-semibold mt-1">
+                            Coding Since &nbsp; 2022 <span className="text-gray-400 font-normal mx-2">- • -</span> {currentYear}
+                        </p>
+                        <p className="text-sm text-gray-500 font-medium mt-1">
+                            Christian • Family Guy • Sometimes a Nerd
+                        </p>
+                    </div>
 
-            </span>
+                    {/* Main Bio - using text-pretty for better word wrapping */}
+                    <p className="text-gray-600 leading-relaxed text-lg text-pretty">
+                        With a foundation in General Science from <span className="font-semibold text-gray-800">Keta SHTS</span>, 
+                        I am currently pursuing my degree at{' '}
+                        
+                        <Link 
+                            href="https://www.knust.edu.gh" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-green-600 font-semibold hover:text-green-700 hover:underline decoration-2 underline-offset-2 transition-all"
+                        >
+                            KNUST
+                        </Link>.
+                        My journey has been defined by resilience; I believe my background has instilled in me 
+                        the dedication required to solve complex problems. I value efficiency and clear communication, 
+                        and I am committed to leveraging these strengths to become a world-class software engineer.
+                    </p>
+
+                    {/* Skills / Attributes as Badges */}
+                    <div className="pt-4 border-t border-gray-100">
+                        <p className="text-xs font-bold text-blue-500 uppercase tracking-wider mb-3">Core Attributes</p>
+                        <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                            <AttributeBadge label="Critical Thinker" />
+                            <AttributeBadge label="Team Player" />
+                            <AttributeBadge label="Adaptability" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+    );
+}
+
+// Micro-component for attribute badges
+function AttributeBadge({ label }: { label: string }) {
+    return (
+        <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium border border-gray-200 shadow-sm">
+            {label}
+        </span>
     );
 }

@@ -2,6 +2,7 @@ import About from "./components/sections/About";
 import Hero from "./components/sections/Hero";
 //import Terminal from "./components/sections/Terminal";
 import Experience from "./components/sections/Experience";
+import Projects from "./components/sections/Projects";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
     <About />
     {/* <Terminal /> */}
     <Experience />
+    <Projects />
    </>
   );
 }
