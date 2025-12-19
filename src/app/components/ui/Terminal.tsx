@@ -3,7 +3,7 @@ export default function Terminal() {
     <div className=" container  mx-auto w-lg flex-1 relative hidden md:block">
         <div className="absolute inset-0 bg-indigo-500/20 blur-[80px] rounded-full"></div>
 
-        <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500 h-[350px]">
+        <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500 h-87.5">
 
           {/* Browser Header */}
           <div className="flex items-center gap-2 mb-4 border-b border-gray-200 dark:border-gray-700 pb-4">
