@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 
 export default function Hero() {
@@ -7,10 +8,17 @@ export default function Hero() {
                 <h4 className="font-bold">Hi, I am Tornam 👋</h4>
                 <h1 className="text-3xl md:text-5xl font-bold mb-2 text-yellow-500 text-pretty ">Software Engineer</h1>
                 <h4 className="text-pretty font-bold my-2">Student • Fullstack Developer • AI & ML Enthusiast</h4>
-                <p className="text-sm text-balance">I love building functional and user-centric digital experiences. With a strong understanding of the entire development lifecycle, I transform complex problems into efficient software systems.</p>
+                <p className="text-base text-balance font-medium text-gray-500">I love building functional and user-centric digital experiences. With a strong understanding of the entire development lifecycle, I transform complex problems into efficient software systems.</p>
                 <div className="mt-4">
-                    <button className="bg-yellow-500 text-white px-4 py-2 rounded mr-2 hover:bg-yellow-600 transition">Contact Me</button>
-                    <button className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition">View Portfolio</button> 
+                    <button className="bg-yellow-500 text-white px-4 py-2 rounded mr-2 hover:bg-yellow-600 transition font-bold">
+                        
+                        Contact Me
+                    </button>
+
+                    <button className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition font-bold">
+                        {/* <ion-icon name="person-circle-outline"></ion-icon> */}
+                        View Portfolio
+                    </button> 
                 </div>
             </div>
             <div>

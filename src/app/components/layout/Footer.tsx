@@ -4,7 +4,6 @@ export default function Footer() {
       <p className="text-sm text-gray-500">
         Etornam Kordzo Ahiataku &copy; {new Date().getFullYear()} | All rights reserved.
       </p>
-      <button>to</button>
     </footer>
   );
 }
