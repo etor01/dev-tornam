@@ -17,7 +17,7 @@ interface StatsData {
 // 2. BEST PRACTICE: Move static data outside the component to prevent re-creation on render
 const EXPERIENCES: ExperienceData[] = [
     { id: 1, year: "Dec 2025 - Present", company: "Tornam.dev", role: "Full Stack Developer (Freelance)", description: "Building custom scalable web applications with React and Node.js for clients" },
-    { id: 2, year: "Oct 2025 - Dec 2025", company: "The Pius Kode - Kumasi", role: "Frontend Junior Developer", description: "Developed responsive UIs and fixed critical bugs in production" },
+    { id: 2, year: "Oct 2025 - Dec 2025", company: "The Pius Kode - Kumasi", role: "Junior Frontend Developer", description: "Developed responsive UIs and fixed critical bugs in production" },
     { id: 3, year: "Sept 2023 - Nov 2022", company: "Ketu North Municipal Hospital", role: "Intern IT Admin Assistant ", description: "Provided technically assistance; entry of client details into HIMS, processing tickets and facilitating data manipulation in hospital database" },
 ];
 
@@ -33,7 +33,7 @@ export default function Experience() {
         <section className="py-12 px-4 md:px-8 max-w-5xl mx-auto space-y-16">
             {/* WORK EXPERIENCE SECTION */}
             <div>
-                <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">Work Experience</h2>
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-400 mb-10 text-center">Work Experience</h2>
                 
                 {/* RESPONSIVE FIX: 
                    Changed from horizontal scroll to a vertical timeline.
