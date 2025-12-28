@@ -55,7 +55,7 @@ const PROJECTS: ProjectData[] = [
 
 export default function Projects() {
     return (
-        <section className="py-16 px-4 md:px-8 " id="projects">
+        <section className="py-16 px-4 md:px-8 bg-white/30 backdrop-blur-md " id="projects">
             <div className="container mx-auto max-w-5xl">
                 {/* Section Title */}
                 <div className="text-center mb-12">

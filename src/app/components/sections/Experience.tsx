@@ -17,8 +17,8 @@ interface StatsData {
 // 2. BEST PRACTICE: Move static data outside the component to prevent re-creation on render
 const EXPERIENCES: ExperienceData[] = [
     { id: 1, year: "Dec 2025 - Present", company: "Tornam.dev", role: "Full Stack Developer (Freelance)", description: "Building custom scalable web applications with React and Node.js for clients" },
-    { id: 2, year: "Oct 2025 - Dec 2025", company: "The Pius Kode - Kumasi", role: "Junior Frontend Developer", description: "Developed responsive UIs and fixed critical bugs in production" },
-    { id: 3, year: "Sept 2023 - Nov 2022", company: "Ketu North Municipal Hospital", role: "Intern IT Admin Assistant ", description: "Provided technically assistance; entry of client details into HIMS, processing tickets and facilitating data manipulation in hospital database" },
+    { id: 2, year: "Oct 2025 - Dec 2025", company: "The Pius Kode - Kumasi", role: "Junior Frontend Developer - Intern", description: "Developed responsive UIs and fixed critical bugs in production" },
+    { id: 3, year: "Sept 2023 - Nov 2022", company: "Ketu North Municipal Hospital", role: "IT Admin Assistant - Intern ", description: "Provided technically assistance; entry of client details into HIMS, processing tickets and facilitating data manipulation in hospital database" },
 ];
 
 const STATS: StatsData[] = [
