@@ -17,7 +17,7 @@ export default function About() {
                 
                 {/* LEFT COLUMN: Title (Sticky allows it to stay in view if content is long) */}
                 <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
-                    <h2 className="text-4xl md:text-6xl font-extrabold text-blue-200 tracking-tighter uppercase mb-2">
+                    <h2 className="text-4xl md:text-6xl font-extrabold text-blue-200 hover:text-yellow-500 tracking-tighter uppercase mb-2">
                         About
                     </h2>
                     <span className="block text-2xl md:text-3xl font-bold text-yellow-500 -mt-4 md:-mt-6 mr-0 md:mr-2">
@@ -34,8 +34,8 @@ export default function About() {
                         <p className="text-blue-500 font-semibold mt-1">
                             Coding Since &nbsp; 2022 <span className="text-gray-400 font-normal mx-2">- • -</span> {currentYear}
                         </p>
-                        <p className="text-sm text-gray-500 font-medium mt-1">
-                            Christian • Family Guy • Sometimes a Nerd
+                        <p className="text-sm text-gray-500 font-bold mt-1">
+                            Christian • Family Guy • Lifelong Learner
                         </p>
                     </div>
 
