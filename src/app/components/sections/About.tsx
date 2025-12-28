@@ -4,16 +4,16 @@ export default function About() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <section className="py-16 px-6 bg-linear-to-b from-blue-950/20 to-transparent" id="about">
+        <section className="py-16 px-6" id="about">
            
             <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 
                 {/* LEFT COLUMN: Title  */}
                 <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
-                    <h2 className="text-4xl md:text-6xl font-extrabold bg-linear-to-r from-blue-300 via-cyan-300 to-blue-400 bg-clip-text text-transparent hover:from-yellow-300 hover:via-yellow-200 hover:to-yellow-400 tracking-tighter uppercase mb-2 transition-all">
+                    <h2 className="text-4xl md:text-6xl font-extrabold bg-linear-to-r from-gray-100 via-gray-200 to-blue-400 bg-clip-text text-transparent tracking-tighter uppercase mb-2 transition-all">
                         About
                     </h2>
-                    <span className="block text-2xl md:text-3xl font-bold text-yellow-400 -mt-4 md:-mt-6 mr-0 md:mr-2">
+                    <span className="block text-2xl md:text-3xl font-bold text-blue-400 -mt-4 md:-mt-6 mr-0 md:mr-2">
                         Me
                     </span>
                 </div>
@@ -24,7 +24,7 @@ export default function About() {
                     {/* Header Info */}
                     <div>
                         <h3 className="text-2xl font-bold text-white">Etornam Kordzo Ahiataku</h3>
-                        <p className="text-cyan-400 font-semibold mt-1">
+                        <p className="text-blue-400 font-semibold mt-1">
                             Coding Since &nbsp; 2022 <span className="text-gray-500 font-normal mx-2">- • -</span> {currentYear}
                         </p>
                         <p className="text-sm text-gray-400 font-medium mt-1">
@@ -52,7 +52,7 @@ export default function About() {
 
                     {/* Skills / Attributes as Badges */}
                     <div className="pt-4 border-t border-gray-700">
-                        <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-3">Core Attributes</p>
+                        <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-3">Core Attributes</p>
                         <div className="flex flex-wrap justify-center md:justify-start gap-3">
                             <AttributeBadge label="Critical Thinker" />
                             <AttributeBadge label="Team Player" />
@@ -67,7 +67,7 @@ export default function About() {
 
 function AttributeBadge({ label }: { label: string }) {
     return (
-        <span className="px-3 py-1.5 bg-linear-to-r from-blue-900/40 to-cyan-900/40 text-gray-200 rounded-full text-sm font-medium border border-cyan-500/30 shadow-lg hover:from-cyan-500/20 hover:to-blue-500/20 hover:text-cyan-300 hover:border-cyan-400/60 hover:shadow-cyan-500/20 transition-all duration-200">
+        <span className="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-md font-bold  ">
             {label}
         </span>
     );
