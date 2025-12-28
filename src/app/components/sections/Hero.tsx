@@ -12,7 +12,7 @@ export default function Hero() {
                         <path d="M0 6.293V12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-7.707l-7.918 1.32a3.12 3.12 0 0 1-1.02-.026L0 6.293z"/>
                     </svg>;
     return (
-        <section className="container p-8 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center md:h-150 h-150 mt-10 md:mt-auto mb-50 md:mb-0">
+        <section className="container p-8 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center md:h-150 h-150 mt-10 md:mt-auto mb-50 md:mb-0" id="hero">
         
 
             <div className="md:col-span-8 space-y-5 text-center md:text-left">

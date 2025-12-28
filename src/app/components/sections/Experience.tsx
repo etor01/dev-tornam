@@ -30,7 +30,7 @@ const STATS: StatsData[] = [
 
 export default function Experience() {
     return (
-        <section className="py-12 px-4 md:px-8 max-w-5xl mx-auto space-y-16">
+        <section className="py-12 px-4 md:px-8 max-w-5xl mx-auto space-y-16" id="experience">
             {/* WORK EXPERIENCE SECTION */}
             <div>
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-400 mb-10 text-center">Work Experience</h2>
