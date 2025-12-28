@@ -24,30 +24,27 @@ const infoIcon = <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" 
                     </svg>;
 
     return (
-        <section className="container p-8 md:p-6 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-12 items-center md:h-1vh h-screen pt-10 md:m-auto mb-0 md:mb-0 " id="hero">
+        <section className="container p-8 md:p-6 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-12 items-center md:h-screen h-screen pt-10 md:pt-[-30] md:m-auto md:mt-[-30] mb-0 md:mb-0 " id="hero">
             <div className="md:col-span-8 space-y-5 text-center md:text-left">
 
                 <h4 className="text-lg md:text-2xl font-semibold text-slate-400 my-0 md:my-5 tracking-wide">Hi, I&apos;m Tornam 👋</h4>
                 
                 <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300 text-pretty drop-shadow-sm md:py-4 py-2">Software Engineer</h1>
                 
-                {/* Subtitle: Crisp slate-200 */}
                 <h4 className="text-sm md:text-2xl font-bold text-slate-200">Student • Fullstack Developer • AI & ML Enthusiast</h4>
                 
-                {/* Description: Relaxed slate-400 for readability */}
                 <p className="text-lg text-slate-400 leading-relaxed md:text-lg text-pretty max-w-2xl">I love building functional and user-centric digital experiences. With a strong understanding of the entire development lifecycle, I transform complex problems into efficient software systems.</p>
                 
-                {/* Social Icons: Unified style with slate backgrounds and hover effects */}
                 <div className="flex justify-center md:justify-start gap-3 flex-wrap">
-                    <Link href="mailto:ahiataku1@gmail.com">
+                    <Link href="mailto:ahiataku1@gmail.com" target="_blank" aria-label="Send me an email">
                         <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-800/50 border border-slate-700 text-blue-400 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300">{EmailIcon}</span>
                     </Link>
 
-                    <Link href="#">
+                    <Link href="https://www.linkedin.com/in/ahiatakuetornam/" target="_blank" rel="noopener noreferrer">
                         <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-800/50 border border-slate-700 text-blue-400 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300">{LinkedinIcon}</span>
                     </Link>
 
-                    <Link href="#">
+                    <Link href="https://www.github.com/etor01" target="_blank" rel="noopener noreferrer">
                         <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-800/50 border border-slate-700 text-blue-400 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300">{GithubIcon}</span>
                     </Link>
                 </div>
@@ -55,13 +52,11 @@ const infoIcon = <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" 
                 {/* CTA buttons */}
                 <div className="mt-6 flex flex-col sm:flex-row sm:justify-center md:justify-start gap-4">
                     <Link href="#contact">
-                        {/* Primary Button: Solid blue with shadow glow */}
                         <button className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg shadow-blue-500/20 hover:bg-blue-500 hover:shadow-blue-500/40 transition-all duration-300 font-semibold cursor-pointer border border-transparent">
                             <span className="inline-flex items-center gap-2">Contact Me {infoIcon} </span>
                         </button>
                     </Link>
-                    <Link href="#projects">    
-                        {/* Secondary Button: Slate surface with border, much cleaner than yellow/gray */}
+                    <Link href="/Etornam_Kordzo_Ahiataku_CV.pdf" target="_blank" download>    
                         <button className="w-full sm:w-auto bg-slate-900 text-slate-300 border border-slate-700 px-8 py-3 rounded-lg shadow-md hover:bg-slate-800 hover:text-white hover:border-slate-600 transition-all duration-300 font-semibold cursor-pointer">
                             <span className="inline-flex items-center gap-2 cursor-pointer"> Download CV {ProjectIcon}</span>
                         </button>
@@ -70,14 +65,13 @@ const infoIcon = <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" 
             </div>
 
             <div className="col-span-0 md:col-span-4 md:top-8 text-center md:text-right mb-0">
-                {/* My Image: Refined shadow and changed border to match dark theme */}
                 <Image
                     src="/me.png"
                     alt="picture of dev tornam"
                     width={200}
                     height={200}
                     priority
-                    className="hidden md:block md:w-85 md:h-70 rounded-full mx-auto shadow-2xl shadow-blue-900/20 border-4 border-slate-800"
+                    className="hidden md:block md:w-70 md:h-70 rounded-full mx-auto shadow-2xl shadow-blue-900/20 border-4 border-slate-800"
                 />
             </div>
         </section>
