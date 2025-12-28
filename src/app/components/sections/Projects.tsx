@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-
-// 1. Define Interfaces for Type Safety
 interface ProjectData {
     id: number;
     title: string;
@@ -14,7 +12,7 @@ interface ProjectData {
     featured?: boolean;
 }
 
-// 2. Dummy Data (Move this to a separate file or CMS later)
+// 2. Move this to a separate file or CMS later
 const PROJECTS: ProjectData[] = [
     {
         id: 1,
@@ -57,12 +55,12 @@ const PROJECTS: ProjectData[] = [
 
 export default function Projects() {
     return (
-        <section className="py-16 px-4 md:px-8 bg-gray-50" id="projects">
+        <section className="py-16 px-4 md:px-8 " id="projects">
             <div className="container mx-auto max-w-5xl">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-                        Featured <span className="text-yellow-500">Projects</span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-blue-200">
+                        Showcase <span className="text-yellow-500">Projects</span>
                     </h2>
                     <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
                         A selection of my recent work, focusing on scalable architecture and user-centric design.
@@ -126,7 +124,7 @@ function ProjectCard({ title, description, logoChar, techStack, liveLink, github
             {/* On desktop, we add a left border and padding to separate it visually */}
             <div className="shrink-0 flex flex-row md:flex-col gap-3 pt-4 md:pt-0 mt-2 md:mt-0 border-t md:border-t-0 md:border-l border-gray-100 md:pl-6">
                 
-                <Link href={liveLink} className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
+                <Link href={liveLink} className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-700 transition-colors shadow-sm">
                     Live Demo 
                     {/* External Link Icon SVG */}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">

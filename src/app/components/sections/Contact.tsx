@@ -36,7 +36,7 @@ export default function Contact() {
                                     <label htmlFor="message" className="block text-gray-700">Message</label>
                                     <textarea id="message" className="mt-1 block w-full p-2 border border-gray-300 rounded" rows={4} required></textarea>
                                 </div>
-                                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                                <button type="submit" className="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded">Send </button>
                             </div>
                         </form>
                    

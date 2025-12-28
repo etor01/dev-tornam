@@ -22,9 +22,9 @@ const EXPERIENCES: ExperienceData[] = [
 ];
 
 const STATS: StatsData[] = [
-    { label: "Deployments", value: "8" },
+    { label: "Major Deployments", value: "4" },
     { label: "Success Rate", value: "98.5%" },
-    { label: "Lines of Code", value: "2.5K" },
+    { label: "Lines of Code", value: "250K+" },
     { label: "Code Quality", value: "95%" },
 ];
 
@@ -48,7 +48,7 @@ export default function Experience() {
 
             {/* STATS SECTION */}
             <div>
-                <h2 className="text-3xl font-semibold text-gray-800 mb-10 text-center">My Stats</h2>
+                <h2 className="text-3xl font-semibold text-gray-500 mb-10 text-center">My Stats</h2>
                 
                 
                 <div className="bg-gray-200 rounded-lg shadow-lg overflow-hidden border border-gray-200">
