@@ -1,21 +1,14 @@
 import Link from "next/link";
 
 export default function About() {
-    // Dynamic year calculation is fine here, but keep it simple.
     const currentYear = new Date().getFullYear();
 
     return (
         <section className="py-16 px-6 bg-white" id="about">
-            {/* LAYOUT FIX: 
-                1. Replaced <span> with <div>.
-                2. Changed grid-cols-2 to a 12-column grid. 
-                   - On Mobile: Stacked (col-span-12)
-                   - On Desktop: Title takes 4 cols, Content takes 8 cols.
-                   This creates a more "Golden Ratio" look which is more pleasing to the eye.
-            */}
+           
             <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 
-                {/* LEFT COLUMN: Title (Sticky allows it to stay in view if content is long) */}
+                {/* LEFT COLUMN: Title  */}
                 <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
                     <h2 className="text-4xl md:text-6xl font-extrabold text-blue-200 hover:text-yellow-500 tracking-tighter uppercase mb-2">
                         About
@@ -31,7 +24,7 @@ export default function About() {
                     {/* Header Info */}
                     <div>
                         <h3 className="text-2xl font-bold text-gray-800">Etornam Kordzo Ahiataku</h3>
-                        <p className="text-blue-500 font-semibold mt-1">
+                        <p className=" text-blue-500 font-semibold mt-1">
                             Coding Since &nbsp; 2022 <span className="text-gray-400 font-normal mx-2">- • -</span> {currentYear}
                         </p>
                         <p className="text-sm text-gray-500 font-bold mt-1">
@@ -41,14 +34,14 @@ export default function About() {
 
                     {/* Main Bio - using text-pretty for better word wrapping */}
                     <p className="text-gray-600 leading-relaxed text-lg text-pretty">
-                        With a foundation in General Science from <span className="font-semibold text-gray-800">Keta SHTS</span>, 
+                        With a foundation in General Science from <span className="font-semibold text-gray-800/50 hover:text-gray-800 cursor-not-allowed">Keta SHTS</span>, 
                         I am currently pursuing my degree at{' '}
                         
                         <Link 
                             href="https://www.knust.edu.gh" 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-green-600 font-semibold hover:text-green-700 hover:underline decoration-2 underline-offset-2 transition-all"
+                            className="text-green-600/50 font-semibold hover:text-green-700 hover:underline decoration-2 underline-offset-2 transition-all"
                         >
                             KNUST
                         </Link>.
@@ -75,7 +68,7 @@ export default function About() {
 // Micro-component for attribute badges
 function AttributeBadge({ label }: { label: string }) {
     return (
-        <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium border border-gray-200 shadow-sm">
+        <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium border border-gray-200 shadow-sm hover:bg-blue-500 hover:text-white hover:border-blue-500 hover:shadow-md transition-all duration-200 cursor-not-allowed">
             {label}
         </span>
     );
