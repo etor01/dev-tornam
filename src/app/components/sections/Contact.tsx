@@ -1,7 +1,10 @@
 
 export default function Contact() {
+    const sendIcon = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-send" viewBox="0 0 16 16">
+                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                     </svg>;
     return (
-        <section className="py-16 px-6 bg-white" id="contact">
+        <section className="py-16 px-6 " id="contact">
             <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 
                 {/* LEFT COLUMN: Title */}
@@ -36,7 +39,10 @@ export default function Contact() {
                                     <label htmlFor="message" className="block text-gray-700">Message</label>
                                     <textarea id="message" className="mt-1 block w-full p-2 border border-gray-300 rounded" rows={4} required></textarea>
                                 </div>
-                                <button type="submit" className="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded">Send </button>
+
+                                <button type="submit" className="bg-blue-400 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                                    <span className="inline-flex items-center gap-2">Send {sendIcon} </span>
+                                </button>
                             </div>
                         </form>
                    

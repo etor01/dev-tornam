@@ -4,7 +4,7 @@ export default function About() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <section className="py-16 px-6 bg-white" id="about">
+        <section className="py-16 px-6 " id="about">
            
             <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 

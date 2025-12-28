@@ -1,5 +1,6 @@
 'use client';
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     const infoIcon = <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" className="bi bi-person-fill-check" viewBox="0 0 16 16">
@@ -23,13 +24,19 @@ export default function Hero() {
                 
                 {/* CTA buttons */}
                 <div className="mt-4 flex flex-col sm:flex-row sm:justify-center md:justify-start gap-4">
-                    <button className="bg-yellow-500 text-white px-4 py-2 rounded  hover:bg-yellow-500 hover:text-gray-800 transition font-bold">
-                        <span className="inline-flex items-center gap-2">Contact Me {infoIcon} </span>
-                    </button>
-
-                    <button className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 hover:text-yellow-500 transition font-bold">
-                        <span className="inline-flex items-center gap-2"> View Projects {ProjectIcon}</span>
-                    </button> 
+                   
+                    <Link href="#contact">
+                        <button className="bg-yellow-500 text-white px-4 py-2 rounded  hover:bg-yellow-500 hover:text-gray-800 transition font-bold">
+                            <span className="inline-flex items-center gap-2">Contact Me {infoIcon} </span>
+                        </button>
+                    </Link>
+                        
+                    <Link href="#projects">    
+                        <button className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 hover:text-yellow-500 transition font-bold">
+                            <span className="inline-flex items-center gap-2"> View Projects {ProjectIcon}</span>
+                        </button>
+                    </Link>
+                     
                 </div>
 
             </div>

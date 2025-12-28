@@ -6,10 +6,10 @@ export default function Header() {
             <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
                 <span className="text-2xl font-bold text-gray-800">DevTornam.</span>
                 <ul className="hidden md:flex gap-8 items-center">
-                    <li><Link href="#" className="text-gray-700 hover:text-blue-600 transition">About</Link></li>
-                    <li><Link href="#" className="text-gray-700 hover:text-blue-600 transition">Experience</Link></li>
-                    <li><Link href="#" className="text-gray-700 hover:text-blue-600 transition">Projects</Link></li>
-                    <li><Link href="#" className="bg-yellow-500 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-yellow-600 transition font-medium">Let&apos;s talk</Link></li>
+                    <li><Link href="#about" className="text-gray-700 hover:text-blue-600 transition">About</Link></li>
+                    <li><Link href="#experience" className="text-gray-700 hover:text-blue-600 transition">Experience</Link></li>
+                    <li><Link href="#projects" className="text-gray-700 hover:text-blue-600 transition">Projects</Link></li>
+                    <li><Link href="#contact" className="bg-yellow-500 text-gray-800 px-4 py-2 rounded mr-2 hover:bg-yellow-600 transition font-medium">Let&apos;s talk</Link></li>
                 </ul>
             </nav>
         </header>
