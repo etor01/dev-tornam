@@ -33,7 +33,7 @@ export default function Experience() {
         <section className="py-12 px-4 md:px-8 max-w-5xl mx-auto space-y-16" id="experience">
             {/* WORK EXPERIENCE SECTION */}
             <div>
-                <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent mb-10 md:mb-20 text-center">Work Experience</h2>
+                <h2 className="text-3xl md:text-5xl font-bold bg-linear-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent mb-10 md:mb-20 text-center">Work Experience</h2>
                 
                 {/* RESPONSIVE FIX: 
                    Changed from horizontal scroll to a vertical timeline.
@@ -51,7 +51,7 @@ export default function Experience() {
                 <h2 className="text-3xl font-semibold text-slate-200 mb-10 text-center uppercase">My Stats</h2>
                 
                 
-                <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg shadow-xl overflow-hidden border border-slate-700">
+                <div className="bg-linear-to-br from-slate-800 to-slate-900 rounded-lg shadow-xl overflow-hidden border border-slate-700">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-700">
                         {STATS.map((stat) => (
                             <StatsCard key={stat.label} {...stat} />
