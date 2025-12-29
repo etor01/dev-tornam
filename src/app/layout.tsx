@@ -5,6 +5,8 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import SmoothScroll from "./components/ui/SmoothScroll";
 import LenisAutoScroll from "./components/ui/LenisAutoScroll";
+import ParticlesBackground from "./components/ParticlesBackground";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +33,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased `} >
         <SmoothScroll>
           <LenisAutoScroll />
+          <ParticlesBackground />
           <Header />
           {children}
           <Footer />
