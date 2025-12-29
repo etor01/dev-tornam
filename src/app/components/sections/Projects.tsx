@@ -19,8 +19,8 @@ const PROJECTS: ProjectData[] = [
         description: "An AI-powered medical imaging analysis tool designed to assist professionals in early diagnosis of breast related diseases. Has a chat bot for clients to educate them on breast cancer prevention and care.",
         logoChar: "M",
         techStack: ["Next.js 14", "Ollama", "Bootstrap", "LM Studio", "Git", "Lama 3.2 Model"],
-        liveLink: "#",
-        githubLink: "#",
+        liveLink: "/maintainance",
+        githubLink: "/maintainance",
         featured: false,
     },
     {
@@ -29,8 +29,8 @@ const PROJECTS: ProjectData[] = [
         description: "A semester course assignment built with php, bootstrap and vanilla js. Cleanse guru is a platform that connects skilled cleaners to service seekers, providing an easy way to book cleaning services online.",
         logoChar: "C",
         techStack: ["php", "Javascript", "Git", "Bootrap"],
-        liveLink: "#",
-        githubLink: "#",
+        liveLink: "/maintainance",
+        githubLink: "/maintainance",
     },
     {
         id: 3,
@@ -38,8 +38,8 @@ const PROJECTS: ProjectData[] = [
         description: "Agricultural management platform connecting local farmers with distributors and also provide a simplified way of managing farms through data-driven insights with AI and IoT integration.",
         logoChar: "A",
         techStack: ["TypeScript", "NestJS", "Supabase", "HuggingFace", "PayStack", "Vercel"],
-        liveLink: "#",
-        githubLink: "#",
+        liveLink: "https://agriboost2-vs4s.vercel.app/",
+        githubLink: "https://github.com/etor01/agriboost2",
     },
     {
         id: 4,
@@ -47,8 +47,8 @@ const PROJECTS: ProjectData[] = [
         description: "Smart recycling initiative platform to educate people on sustainable waste management practices.",
         logoChar: "C",
         techStack: ["JavaScript", "Bootstrap", "Git", "HTML"],
-        liveLink: "#",
-        githubLink: "#",
+        liveLink: "https://etor01.github.io/HCI/",
+        githubLink: "https://github.com/etor01/HCI",
     },
 ];
 
