@@ -4,12 +4,12 @@ export default function About() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <section className="py-16 px-6" id="about">
+        <section className="py-16 px-6 font-[inter]" id="about">
            
             <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
                 
                 {/* LEFT COLUMN: Title  */}
-                <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
+                <div className="font-[poppins] md:col-span-4 md:sticky md:top-8 text-center md:text-right">
                     <h2 className="text-4xl md:text-6xl font-extrabold bg-linear-to-r from-gray-100 via-gray-200 to-blue-400 bg-clip-text text-transparent tracking-tighter uppercase mb-2 transition-all">
                         About
                     </h2>
@@ -67,7 +67,7 @@ export default function About() {
 
 function AttributeBadge({ label }: { label: string }) {
     return (
-        <span className="px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-md font-bold  ">
+        <span className="font-[poppins] px-3 py-1.5 bg-gray-100 text-gray-800 rounded-full text-md font-bold  ">
             {label}
         </span>
     );

@@ -30,10 +30,10 @@ const STATS: StatsData[] = [
 
 export default function Experience() {
     return (
-        <section className="py-12 px-4 md:px-8 max-w-5xl mx-auto space-y-16" id="experience">
+        <section className="font-[inter] py-12 px-4 md:px-8 max-w-5xl mx-auto space-y-16" id="experience">
             {/* WORK EXPERIENCE SECTION */}
             <div>
-                <h2 className="text-3xl md:text-5xl font-bold bg-linear-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent mb-10 md:mb-20 text-center">Work Experience</h2>
+                <h2 className="font-[poppins] text-3xl md:text-5xl font-bold bg-linear-to-r from-blue-400 via-slate-300 to-blue-300 bg-clip-text text-transparent mb-10 md:mb-20 text-center">Work Experience</h2>
                 
                 {/* RESPONSIVE FIX: 
                    Changed from horizontal scroll to a vertical timeline.

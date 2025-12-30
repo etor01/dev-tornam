@@ -10,7 +10,7 @@ export default function Header() {
         return null;
     }else {
             return (
-                <header className=" bg-linear-to-b from-slate-900/50 to-slate-800/30 backdrop-blur-md shadow-md sticky top-0 z-50">
+                <header className="font-[inter] bg-linear-to-b from-slate-900/50 to-slate-800/30 backdrop-blur-md shadow-md sticky top-0 z-50">
                     <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
                             <Link href="#hero" >
                         <span className="text-2xl font-bold text-gray-100">Tornam.<span className="text-sm">dev</span></span>

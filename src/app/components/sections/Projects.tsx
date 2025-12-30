@@ -54,12 +54,12 @@ const PROJECTS: ProjectData[] = [
 
 export default function Projects() {
     return (
-        <section className="py-16 px-4 md:px-8 " id="projects">
+        <section className="font-[inter] py-16 px-4 md:px-8 " id="projects">
             <div className="container mx-auto max-w-5xl">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-bold text-slate-100">
-                        Showcase <span className="text-cyan-400">Projects</span>
+                    <h2 className="font-[poppins] text-3xl md:text-5xl font-bold text-slate-100">
+                        Showcase <span className="text-blue-400">Projects</span>
                     </h2>
                     <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
                         A selection of my recent work, focusing on scalable architecture and user-centric design.

@@ -27,7 +27,7 @@ const Toast = ({ message, type, onClose }: { message: string, type: ToastType, o
   const isSuccess = type === 'success';
   
   return (
-    <div className={`fixed bottom-5 right-5 z-50 flex items-center gap-3 px-6 py-4 rounded-xl shadow-2xl border backdrop-blur-md transition-all duration-300 animate-slide-in ${
+    <div className={`font-[inter] fixed bottom-5 right-5 z-50 flex items-center gap-3 px-6 py-4 rounded-xl shadow-2xl border backdrop-blur-md transition-all duration-300 animate-slide-in ${
       isSuccess 
         ? 'bg-slate-900/90 border-green-500/50 text-green-400' 
         : 'bg-slate-900/90 border-red-500/50 text-red-400'
@@ -113,7 +113,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-16 px-6 relative" id="contact">
+    <section className="font-[inter] py-16 px-6 relative" id="contact">
       {/* Toast Notification */}
       <Toast 
         message={toast.message} 
@@ -125,10 +125,10 @@ export default function Contact() {
         
         {/* LEFT COLUMN: Title */}
         <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-slate-100 hover:text-slate-200 tracking-tighter uppercase mb-2 transition-colors">
+            <h2 className="font-[poppins] text-4xl md:text-6xl font-extrabold text-slate-100 hover:text-slate-200 tracking-tighter uppercase mb-2 transition-colors">
                 Contact
             </h2>
-            <span className="block text-2xl md:text-3xl font-bold text-blue-400 -mt-4 md:-mt-6 mr-0 md:mr-2">
+            <span className="font-[poppins] block text-2xl md:text-3xl font-bold text-blue-400 -mt-4 md:-mt-5 mr-0 md:mr-2">
                 Me
             </span>
         </div>

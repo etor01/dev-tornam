@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import SmoothScroll from "./components/ui/SmoothScroll";
 import LenisAutoScroll from "./components/ui/LenisAutoScroll";
 import ParticlesBackground from "./components/ParticlesBackground";
+import { Inter, Poppins } from "next/font/google";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+//config for Inter font
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+//config for Poppins font
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased `} >
+      <body className={`${inter.variable} ${poppins.variable} antialiased `} >
         <SmoothScroll>
           <LenisAutoScroll />
           <ParticlesBackground />
