@@ -27,32 +27,32 @@ const infoIcon = <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" 
         <section className="container p-8 md:p-6 mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-12 items-center md:h-screen h-screen pt-10 md:pt-[-30] md:m-auto md:mt-[-30] mb-0 md:mb-0 " id="hero">
             <div className="md:col-span-8 space-y-5 text-center md:text-left">
 
-                <h4 className="font-[inter] text-lg md:text-2xl font-semibold text-slate-400 my-0 md:my-5 tracking-wide">Hi, I&apos;m Tornam 👋</h4>
+                <h4 className="font-[inter] text-lg md:text-2xl font-semibold text-slate-600 my-0 md:my-5 tracking-wide">Hi, I&apos;m Tornam 👋</h4>
                 
-                <h1 className="font-[poppins] text-3xl md:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300 text-pretty drop-shadow-sm md:py-4 py-2">Software Engineer</h1>
+                <h1 className="font-[poppins] text-3xl md:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-linear-to-r from-gray-600 to-gray-300 text-pretty drop-shadow-sm md:py-4 py-2">Software Engineer</h1>
                 
-                <h4 className="font-[inter] text-sm md:text-2xl font-bold text-slate-200">Student • Fullstack Developer • AI & ML Enthusiast</h4>
+                <h4 className="font-[inter] text-sm md:text-2xl font-bold text-slate-700">Student • Fullstack Developer • AI & ML Enthusiast</h4>
                 
-                <p className="font-[inter] text-lg text-slate-400 leading-relaxed md:text-lg text-pretty max-w-2xl">I love building functional and user-centric digital experiences. With a strong understanding of the entire development lifecycle, I transform complex problems into efficient software systems.</p>
+                <p className="font-[inter] text-lg text-slate-600 leading-relaxed md:text-lg text-pretty max-w-2xl">I love building functional and user-centric digital experiences. With a strong understanding of the entire development lifecycle, I transform complex problems into efficient software systems.</p>
                 
                 <div className=" flex justify-center md:justify-start gap-3 flex-wrap">
                     <Link href="mailto:ahiataku1@gmail.com" target="_blank" aria-label="Send me an email">
-                        <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-800/50 border border-slate-700 text-blue-400 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300">{EmailIcon}</span>
+                        <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-100/50 border border-slate-800 text-slate-800 rounded-full hover:bg-slate-800/20 hover:text-slate-700 transition-all duration-300">{EmailIcon}</span>
                     </Link>
 
                     <Link href="https://www.linkedin.com/in/ahiatakuetornam/" target="_blank" rel="noopener noreferrer">
-                        <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-800/50 border border-slate-700 text-blue-400 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300">{LinkedinIcon}</span>
+                        <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-100/50 border border-slate-800 text-slate-800 rounded-full hover:bg-slate-800/20 hover:text-slate-700 transition-all duration-300">{LinkedinIcon}</span>
                     </Link>
 
                     <Link href="https://www.github.com/etor01" target="_blank" rel="noopener noreferrer">
-                        <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-800/50 border border-slate-700 text-blue-400 rounded-full hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300">{GithubIcon}</span>
+                        <span className="inline-flex items-center justify-center w-10 h-10 px-0 py-0 bg-slate-100/50 border border-slate-800 text-slate-800 rounded-full hover:bg-slate-800/20 hover:text-slate-700 transition-all duration-300">{GithubIcon}</span>
                     </Link>
                 </div>
                 
                 {/* CTA buttons */}
                 <div className="font-[inter] mt-6 flex flex-col sm:flex-row sm:justify-center md:justify-start gap-4">
                     <Link href="#contact">
-                        <button className="w-full sm:w-auto bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg shadow-blue-500/20 hover:bg-blue-500 hover:shadow-blue-500/40 transition-all duration-300 font-semibold cursor-pointer border border-transparent">
+                        <button className="w-full sm:w-auto bg-blue-600/75 text-white px-8 py-3 rounded-lg shadow-lg shadow-blue-500/20 hover:bg-blue-500 hover:shadow-blue-500/40 transition-all duration-300 font-semibold cursor-pointer border border-transparent">
                             <span className="inline-flex items-center gap-2">Contact Me {infoIcon} </span>
                         </button>
                     </Link>
