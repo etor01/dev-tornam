@@ -125,7 +125,7 @@ export default function Contact() {
         
         {/* LEFT COLUMN: Title */}
         <div className="md:col-span-4 md:sticky md:top-8 text-center md:text-right">
-            <h2 className="font-[poppins] text-4xl md:text-6xl font-extrabold text-slate-100 hover:text-slate-200 tracking-tighter uppercase mb-2 transition-colors">
+            <h2 className="font-[poppins] text-4xl md:text-6xl font-extrabold text-slate-700 hover:text-slate-200 tracking-tighter uppercase mb-2 transition-colors">
                 Contact
             </h2>
             <span className="font-[poppins] block text-2xl md:text-3xl font-bold text-blue-400 -mt-4 md:-mt-5 mr-0 md:mr-2">
@@ -135,17 +135,17 @@ export default function Contact() {
 
         {/* RIGHT COLUMN: Content */}
         <div className="md:col-span-8 space-y-6 text-center md:text-left">
-            <h3 className="text-2xl font-bold text-slate-200 mb-1">Send me a message</h3>
-            <p className="text-slate-300 leading-relaxed text-lg text-pretty">
+            <h3 className="text-2xl font-bold text-slate-700 mb-1">Send me a message</h3>
+            <p className="text-slate-500 leading-relaxed text-lg text-pretty">
                 I&apos;m currently open to discussing new projects, creative ideas, or opportunities to be part of your visions. 
-                <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium ml-1.5 animate-pulse">Open to Work</span> 
+                <span className="px-3 py-1 bg-green-500/40 text-gray-800 rounded-full text-sm font-medium ml-1.5 animate-pulse">Open to Work</span> 
             </p>
         
             <form ref={formRef} onSubmit={handleSend} noValidate>
                 <div>
                     {/* Name Input */}
                     <div className="mb-4">
-                        <label htmlFor="name" className="block text-slate-200 font-medium text-left">Name</label>
+                        <label htmlFor="name" className="block text-slate-500 font-medium text-left">Name</label>
                         <input 
                           type="text" 
                           id="name" 
@@ -158,7 +158,7 @@ export default function Contact() {
 
                     {/* Email Input */}
                     <div className="mb-4">
-                        <label htmlFor="email" className="block text-slate-200 font-medium text-left">Email</label>
+                        <label htmlFor="email" className="block text-slate-500 font-medium text-left">Email</label>
                         <input 
                           type="email" 
                           id="email" 
@@ -171,7 +171,7 @@ export default function Contact() {
 
                     {/* Message Input */}
                     <div className="mb-4">
-                        <label htmlFor="message" className="block text-slate-200 font-medium text-left">Message</label>
+                        <label htmlFor="message" className="block text-slate-500 font-medium text-left">Message</label>
                         <textarea 
                           id="message" 
                           name="message"
