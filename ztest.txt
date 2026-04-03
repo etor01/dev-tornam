@@ -1,6 +1,0 @@
-<span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-medium">React</span>
-
-<div className="bg-linear-to-b from-gray-950/20 to-transparent"></div>
-
-prompt for styling
-style this component professionally for me. Do not change the layout, logic or the data but make the colors especially more professional harmonious. It will be rendered on a black background, please take note.
