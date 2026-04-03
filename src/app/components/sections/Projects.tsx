@@ -1,134 +1,132 @@
 "use client";
 
 import Link from "next/link";
+import { AiFillGithub } from "react-icons/ai";
+import { FiExternalLink } from "react-icons/fi";
+
 interface ProjectData {
-    id: number;
-    title: string;
-    description: string;
-    logoChar: string;
-    techStack: string[];
-    liveLink: string;
-    githubLink: string;
-    featured?: boolean;
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  liveLink: string;
+  githubLink: string;
+  bgColor: string;
+  accentColor: string;
 }
 
 const PROJECTS: ProjectData[] = [
-    {
-        id: 1,
-        title: "Mediscan - AI Breast Cancer Awareness App",
-        description: "An AI-powered medical imaging analysis tool designed to assist professionals in early diagnosis of breast related diseases. Has a chat bot for clients to educate them on breast cancer prevention and care.",
-        logoChar: "M",
-        techStack: ["Next.js 14", "Ollama", "Bootstrap", "LM Studio", "Git", "Lama 3.2 Model"],
-        liveLink: "/maintainance",
-        githubLink: "/maintainance",
-        featured: false,
-    },
-    {
-        id: 2,
-        title: "Cleanse Guru",
-        description: "A semester course assignment built with php, bootstrap and vanilla js. Cleanse guru is a platform that connects skilled cleaners to service seekers, providing an easy way to book cleaning services online.",
-        logoChar: "C",
-        techStack: ["php", "Javascript", "Git", "Bootrap"],
-        liveLink: "/maintainance",
-        githubLink: "/maintainance",
-    },
-    {
-        id: 3,
-        title: "AgriBoost",
-        description: "Agricultural management platform connecting local farmers with distributors and also provide a simplified way of managing farms through data-driven insights with AI and IoT integration.",
-        logoChar: "A",
-        techStack: ["TypeScript", "NestJS", "Supabase", "HuggingFace", "PayStack", "Vercel"],
-        liveLink: "https://agriboost2-vs4s.vercel.app/",
-        githubLink: "https://github.com/etor01/agriboost2",
-    },
-    {
-        id: 4,
-        title: "EcoCycle",
-        description: "Smart recycling initiative platform to educate people on sustainable waste management practices.",
-        logoChar: "C",
-        techStack: ["JavaScript", "Bootstrap", "Git", "HTML"],
-        liveLink: "https://etor01.github.io/HCI/",
-        githubLink: "https://github.com/etor01/HCI",
-    },
+  {
+    id: 1,
+    title: "Mediscan",
+    description:
+      "An AI-powered medical imaging analysis tool designed to assist professionals in early diagnosis of breast related diseases. Built with Next.js and Llama 3.2.",
+    techStack: ["Next.js", "Ollama", "Llama 3.2"],
+    liveLink: "/maintainance",
+    githubLink: "/maintainance",
+    bgColor: "bg-blue-50",
+    accentColor: "text-blue-600",
+  },
+  {
+    id: 2,
+    title: "AgriBoost",
+    description:
+      "Agricultural management platform connecting local farmers with distributors through data-driven insights and AI/IoT integration.",
+    techStack: ["NestJS", "Supabase", "PayStack"],
+    liveLink: "https://agriboost2-vs4s.vercel.app/",
+    githubLink: "https://github.com/etor01/agriboost2",
+    bgColor: "bg-emerald-50",
+    accentColor: "text-emerald-600",
+  },
+  {
+    id: 3,
+    title: "Cleanse Guru",
+    description:
+      "A platform connecting skilled cleaners to service seekers, providing an easy way to book cleaning services online.",
+    techStack: ["PHP", "Bootstrap", "JS"],
+    liveLink: "/maintainance",
+    githubLink: "/maintainance",
+    bgColor: "bg-amber-50",
+    accentColor: "text-amber-600",
+  },
+  {
+    id: 4,
+    title: "EcoCycle",
+    description:
+      "Smart recycling initiative platform to educate people on sustainable waste management practices.",
+    techStack: ["JavaScript", "Bootstrap", "HTML"],
+    liveLink: "https://etor01.github.io/HCI/",
+    githubLink: "https://github.com/etor01/HCI",
+    bgColor: "bg-rose-50",
+    accentColor: "text-rose-600",
+  },
 ];
 
 export default function Projects() {
-    return (
-        <section className="font-[inter] py-16 px-4 md:px-8 " id="projects">
-            <div className="container mx-auto max-w-5xl">
-                {/* Section Title */}
-                <div className="text-center mb-12">
-                    <h2 className="font-[poppins] text-3xl md:text-5xl font-bold text-slate-700">
-                        Showcase <span className="text-blue-400">Projects</span>
-                    </h2>
-                    <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
-                        A selection of my recent work, focusing on scalable architecture and user-centric design.
-                    </p>
-                </div>
+  return (
+    <section className="py-20 px-6 container mx-auto max-w-5xl" id="projects">
+      <h2 className="text-3xl font-bold text-slate-900 mb-12 tracking-tight">
+        Projects
+      </h2>
 
-                {/* The Project List Structure */}
-                <div className="flex flex-col space-y-6">
-                    {PROJECTS.map((project) => (
-                        <ProjectCard key={project.id} {...project} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.id} {...project} />
+        ))}
+      </div>
+    </section>
+  );
 }
 
-function ProjectCard({ title, description, logoChar, techStack, liveLink, githubLink }: ProjectData) {
-    return (
-        <article className="group relative rounded-xl border border-gray-700 bg-gray-900 p-6 md:p-8 transition-all duration-300 flex flex-col md:flex-row gap-6 md:items-center hover:border-blue-400">
-            
-            {/* 1. LOGO COLUMN (Left Side) */}
-            <div className="shrink-0">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center text-2xl md:text-3xl font-bold bg-gray-800 text-blue-400 border border-gray-700 group-hover:bg-gray-700 transition-all duration-300">
-                    {logoChar}
-                </div>
-            </div>
+function ProjectCard({
+  title,
+  description,
+  techStack,
+  liveLink,
+  githubLink,
+  bgColor,
+  accentColor,
+}: ProjectData) {
+  return (
+    <article
+      className={`${bgColor} rounded-2xl p-8 flex flex-col justify-between group transition-all hover:shadow-xl hover:shadow-slate-200/50`}
+    >
+      <div>
+        <div className="flex justify-between items-start mb-6">
+          <h3 className={`text-2xl font-bold ${accentColor}`}>{title}</h3>
+          <div className="flex gap-4">
+            <Link
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-slate-900 transition-colors"
+            >
+              <AiFillGithub size={20} />
+            </Link>
+            <Link
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-slate-900 transition-colors"
+            >
+              <FiExternalLink size={20} />
+            </Link>
+          </div>
+        </div>
 
-            {/* 2. CONTENT COLUMN (Middle - Grows to fill space) */}
-            <div className="flex-1 flex flex-col justify-center space-y-3">
-                <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
-                    {title}
-                </h3>
-                
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-                    {description}
-                </p>
+        <p className="text-slate-600 mb-8 leading-relaxed">{description}</p>
+      </div>
 
-                {/* Tech Stack Tags */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                    {techStack.map((tech, index) => (
-                        <span 
-                            key={index} 
-                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-gray-800 text-gray-300 border border-gray-700 hover:border-blue-400 hover:text-blue-400 transition-colors duration-200"
-                        >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-            </div>
-
-            {/* 3. ACTIONS COLUMN (Right Side on Desktop, Bottom on Mobile) */}
-            <div className="shrink-0 flex flex-row md:flex-col gap-3 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-gray-700 md:pl-6">
-                
-                <Link href={liveLink} className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-blue-400 hover:bg-blue-500 rounded-lg transition-colors duration-300">
-                    Live Demo 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                        <path fillRule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clipRule="evenodd" />
-                        <path fillRule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clipRule="evenodd" />
-                    </svg>
-                </Link>
-
-                <Link href={githubLink} className="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-gray-300 bg-gray-800 border border-gray-700 hover:border-blue-400 hover:text-blue-400 rounded-lg transition-colors duration-300">
-                    View Code
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                </Link>
-            </div>
-        </article>
-    );
+      <div className="flex flex-wrap gap-2">
+        {techStack.map((tech) => (
+          <span
+            key={tech}
+            className="px-3 py-1 rounded-full bg-white/50 text-slate-600 text-xs font-medium border border-white/50"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
 }
