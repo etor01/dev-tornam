@@ -4,6 +4,8 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import SmoothScroll from "./components/ui/SmoothScroll";
 import LenisAutoScroll from "./components/ui/LenisAutoScroll";
+import ThemeLayer from "./components/ui/ThemeLayer";
+import { ThemeProvider } from "./context/ThemeContext";
 import { Inter, Poppins } from "next/font/google";
 
 //config for Inter font
@@ -35,12 +37,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} antialiased `}>
-        <SmoothScroll>
-          <LenisAutoScroll />
-          <Header />
-          {children}
-          <Footer />
-        </SmoothScroll>
+        <ThemeProvider>
+          <ThemeLayer>
+            <SmoothScroll>
+              <LenisAutoScroll />
+              <Header />
+              {children}
+              <Footer />
+            </SmoothScroll>
+          </ThemeLayer>
+        </ThemeProvider>
       </body>
     </html>
   );

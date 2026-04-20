@@ -6,12 +6,12 @@ import Contact from "./components/sections/Contact";
 
 export default function Home() {
   return (
-   <main className="bg-white">
+    <main className="bg-(--background) text-(--text-primary) transition-colors">
       <Hero />
       <Projects />
       <Experience />
       <LatestPosts />
       <Contact />
-   </main>
+    </main>
   );
 }
