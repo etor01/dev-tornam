@@ -11,8 +11,6 @@ interface ProjectData {
   techStack: string[];
   liveLink: string;
   githubLink: string;
-  bgColor: string;
-  accentColor: string;
 }
 
 const PROJECTS: ProjectData[] = [
@@ -24,8 +22,6 @@ const PROJECTS: ProjectData[] = [
     techStack: ["Next.js", "Ollama", "Llama 3.2"],
     liveLink: "/maintainance",
     githubLink: "/maintainance",
-    bgColor: "bg-blue-50",
-    accentColor: "text-blue-600",
   },
   {
     id: 2,
@@ -35,8 +31,6 @@ const PROJECTS: ProjectData[] = [
     techStack: ["NestJS", "Supabase", "PayStack"],
     liveLink: "https://agriboost2-vs4s.vercel.app/",
     githubLink: "https://github.com/etor01/agriboost2",
-    bgColor: "bg-emerald-50",
-    accentColor: "text-emerald-600",
   },
   {
     id: 3,
@@ -46,8 +40,6 @@ const PROJECTS: ProjectData[] = [
     techStack: ["PHP", "Bootstrap", "JS"],
     liveLink: "/maintainance",
     githubLink: "/maintainance",
-    bgColor: "bg-amber-50",
-    accentColor: "text-amber-600",
   },
   {
     id: 4,
@@ -57,15 +49,13 @@ const PROJECTS: ProjectData[] = [
     techStack: ["JavaScript", "Bootstrap", "HTML"],
     liveLink: "https://etor01.github.io/HCI/",
     githubLink: "https://github.com/etor01/HCI",
-    bgColor: "bg-rose-50",
-    accentColor: "text-rose-600",
   },
 ];
 
 export default function Projects() {
   return (
     <section className="py-20 px-6 container mx-auto max-w-5xl" id="projects">
-      <h2 className="text-3xl font-bold text-slate-900 mb-12 tracking-tight">
+      <h2 className="text-3xl font-bold text-(--text-primary) mb-12 tracking-tight">
         Projects
       </h2>
 
@@ -84,22 +74,22 @@ function ProjectCard({
   techStack,
   liveLink,
   githubLink,
-  bgColor,
-  accentColor,
 }: ProjectData) {
   return (
     <article
-      className={`${bgColor} rounded-2xl p-8 flex flex-col justify-between group transition-all hover:shadow-xl hover:shadow-slate-200/50`}
+      className={`rounded-2xl p-8 flex flex-col justify-between group transition-all hover:shadow-xl hover:shadow-(--muted)/50 bg-(--card-bg) border border-(--border)`}
     >
       <div>
         <div className="flex justify-between items-start mb-6">
-          <h3 className={`text-2xl font-bold ${accentColor}`}>{title}</h3>
+          <h3 className={`text-2xl font-bold text-(--text-primary)`}>
+            {title}
+          </h3>
           <div className="flex gap-4">
             <Link
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-slate-900 transition-colors"
+              className="text-(--muted) hover:text-(--text-primary) transition-colors"
             >
               <AiFillGithub size={20} />
             </Link>
@@ -107,21 +97,23 @@ function ProjectCard({
               href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-slate-900 transition-colors"
+              className="text-(--muted) hover:text-(--text-primary) transition-colors"
             >
               <FiExternalLink size={20} />
             </Link>
           </div>
         </div>
 
-        <p className="text-slate-600 mb-8 leading-relaxed">{description}</p>
+        <p className="text-(--text-secondary) mb-8 leading-relaxed">
+          {description}
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech) => (
           <span
             key={tech}
-            className="px-3 py-1 rounded-full bg-white/50 text-slate-600 text-xs font-medium border border-white/50"
+            className="px-3 py-1 rounded-full bg-(--badge-bg) text-(--text-secondary) text-xs font-medium border border-(--border)"
           >
             {tech}
           </span>
