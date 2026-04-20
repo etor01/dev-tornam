@@ -4,7 +4,6 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import SmoothScroll from "./components/ui/SmoothScroll";
 import LenisAutoScroll from "./components/ui/LenisAutoScroll";
-import ParticlesBackground from "./components/ParticlesBackground";
 import { Inter, Poppins } from "next/font/google";
 
 //config for Inter font
@@ -24,7 +23,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "tornam.dev",
-  description: "Portfolio of Etornam Kordzo Ahiataku - Software Engineer | Fullstack Developer | AI & ML Enthusiast",
+  description:
+    "Portfolio of Etornam Kordzo Ahiataku - Software Engineer | Fullstack Developer | AI & ML Enthusiast",
 };
 
 export default function RootLayout({
@@ -34,15 +34,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} antialiased `} >
+      <body className={`${inter.variable} ${poppins.variable} antialiased `}>
         <SmoothScroll>
           <LenisAutoScroll />
-          <ParticlesBackground />
           <Header />
           {children}
           <Footer />
         </SmoothScroll>
-       </body>
+      </body>
     </html>
   );
 }
