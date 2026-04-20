@@ -1,8 +1,44 @@
 @import "tailwindcss";
 
 :root {
+  /* Light mode colors */
   --background: #ffffff;
   --foreground: #111827;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary: #6366f1;
+  --accent: #ec4899;
+  --border: #e5e7eb;
+  --card-bg: #ffffff;
+  --muted: #94a3b8;
+  --badge-bg: #ecfdf5;
+  --input-bg: #ffffff;
+  --on-primary: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --nav-link: #4b5563;
+  --nav-link-active: #111827;
+}
+
+html[data-theme="dark"] {
+  /* Dark mode colors */
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary: #818cf8;
+  --accent: #f472b6;
+  --border: #1e293b;
+  --card-bg: #0b1220;
+  --muted: #cbd5e1;
+  --badge-bg: rgba(4, 120, 87, 0.08);
+  --input-bg: #071026;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --header-bg: rgba(15, 23, 42, 0.8);
+  --nav-link: #cbd5e1;
+  --nav-link-active: #f1f5f9;
 }
 
 body {
@@ -11,10 +47,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-inter), sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-slate-900;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  p,
+  span,
+  a {
+    color: var(--text-primary);
   }
 }
