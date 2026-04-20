@@ -5,14 +5,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-20 px-6 border-t border-slate-50 bg-white">
+    <footer className="py-20 px-6 border-t border-(--border) bg-(--card-bg)">
       <div className="container mx-auto max-w-5xl text-center">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+        <h2 className="text-2xl font-bold text-(--text-primary) mb-4 tracking-tight">
           Let&apos;s build something great together.
         </h2>
         <Link
           href="mailto:ahiataku1@gmail.com"
-          className="text-slate-500 hover:text-blue-600 transition-colors text-lg font-medium"
+          className="text-(--text-secondary) hover:text-(--primary) transition-colors text-lg font-medium"
         >
           ahiataku1@gmail.com
         </Link>
@@ -22,7 +22,7 @@ export default function Footer() {
             href="https://www.github.com/etor01"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-slate-900 transition-colors"
+            className="text-(--muted) hover:text-(--text-primary) transition-colors"
           >
             <AiFillGithub size={24} />
           </Link>
@@ -30,19 +30,19 @@ export default function Footer() {
             href="https://www.linkedin.com/in/ahiatakuetornam/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-slate-400 hover:text-slate-900 transition-colors"
+            className="text-(--muted) hover:text-(--text-primary) transition-colors"
           >
             <AiFillLinkedin size={24} />
           </Link>
           <Link
             href="mailto:ahiataku1@gmail.com"
-            className="text-slate-400 hover:text-slate-900 transition-colors"
+            className="text-(--muted) hover:text-(--text-primary) transition-colors"
           >
             <AiOutlineMail size={24} />
           </Link>
         </div>
 
-        <p className="text-sm text-slate-400 font-medium">
+        <p className="text-sm text-(--muted) font-medium">
           &copy; {currentYear}. Built with care.
         </p>
       </div>
