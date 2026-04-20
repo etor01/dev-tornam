@@ -10,20 +10,20 @@ export default function Hero() {
     >
       <div className="space-y-6 max-w-2xl">
         {/* Available for work badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-(--badge-bg) text-(--primary) text-xs font-semibold">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
           Available for work
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight">
+        <h1 className="text-4xl md:text-6xl font-bold text-(--text-primary) tracking-tight">
           Etornam Ahiataku
         </h1>
 
-        <h2 className="text-xl md:text-2xl font-medium text-slate-500">
+        <h2 className="text-xl md:text-2xl font-medium text-(--text-secondary)">
           Engineer • Student • AWS Cloud Practitioner
         </h2>
 
-        <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
+        <p className="text-lg text-(--text-secondary) leading-relaxed max-w-xl">
           I love building functional and user-centric digital experiences. With
           a strong understanding of the entire development lifecycle, I
           transform complex problems into efficient software systems.
@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <Link
             href="#contact"
-            className="bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/10"
+            className="bg-(--primary) text-(--on-primary) px-8 py-3 rounded-md font-semibold hover:bg-(--primary-hover) transition-all shadow-lg shadow-(--primary)/10"
           >
             Get in touch
           </Link>
@@ -42,7 +42,7 @@ export default function Hero() {
               href="https://www.github.com/etor01"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-slate-900 transition-colors"
+              className="text-(--muted) hover:text-(--text-primary) transition-colors"
             >
               <AiFillGithub size={24} />
             </Link>
@@ -50,13 +50,13 @@ export default function Hero() {
               href="https://www.linkedin.com/in/ahiatakuetornam/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-slate-900 transition-colors"
+              className="text-(--muted) hover:text-(--text-primary) transition-colors"
             >
               <AiFillLinkedin size={24} />
             </Link>
             <Link
               href="mailto:ahiataku1@gmail.com"
-              className="text-slate-400 hover:text-slate-900 transition-colors"
+              className="text-(--muted) hover:text-(--text-primary) transition-colors"
             >
               <AiOutlineMail size={24} />
             </Link>
