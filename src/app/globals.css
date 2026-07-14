@@ -5,6 +5,7 @@ body {
   height: 100dvh;
   padding: 40px;
   display: flex;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .container {
