@@ -1,32 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-import SmoothScroll from "./components/ui/SmoothScroll";
-import LenisAutoScroll from "./components/ui/LenisAutoScroll";
-import ThemeLayer from "./components/ui/ThemeLayer";
-import { ThemeProvider } from "./context/ThemeContext";
-import { Inter, Poppins } from "next/font/google";
-
-//config for Inter font
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-//config for Poppins font
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "900"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
-  title: "tornam.dev",
-  description:
-    "Portfolio of Etornam Kordzo Ahiataku - Software Engineer | Fullstack Developer | AI & ML Enthusiast",
+  title: "manrote.dev",
+  description: "As if we pay attention to read the small details.",
 };
 
 export default function RootLayout({
@@ -36,18 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} antialiased `}>
-        <ThemeProvider>
-          <ThemeLayer>
-            <SmoothScroll>
-              <LenisAutoScroll />
-              <Header />
-              {children}
-              <Footer />
-            </SmoothScroll>
-          </ThemeLayer>
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

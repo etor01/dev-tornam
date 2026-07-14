@@ -1,35 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import ThemeToggle from "../ui/ThemeToggle";
 
 export default function Header() {
-  const pathname = usePathname();
-  const [hash, setHash] = useState("");
-
-  const hideHeader = pathname === "/maintainance";
-
-  useEffect(() => {
-    // initialize current hash and listen for hash changes
-    const setCurrentHash = () => setHash(window.location.hash || "");
-    setCurrentHash();
-    window.addEventListener("hashchange", setCurrentHash);
-    return () => window.removeEventListener("hashchange", setCurrentHash);
-  }, []);
-
-  const isActiveHash = (anchor: string) => {
-    // anchor is like '#projects' — active when pathname is root and hash matches
-    return pathname === "/" && hash === anchor;
-  };
-
-  const isActiveRoute = (route: string) =>
-    pathname === route || pathname?.startsWith(route + "/");
-
-  const linkBase = "hover:text-(--text-primary) transition-colors";
-
-  if (hideHeader) return null;
-
   return (
     <header className="sticky top-0 z-50 bg-(--header-bg) backdrop-blur-sm border-b border-(--border)">
       <nav
@@ -47,36 +19,17 @@ export default function Header() {
         <div className="flex items-center gap-8">
           <ul className="hidden md:flex gap-8 items-center text-sm font-medium text-(--text-secondary)">
             <li>
-              <Link
-                href="#projects"
-                className={`${linkBase} ${isActiveHash("#projects") ? "text-(--text-primary) font-semibold" : ""}`}
-                aria-current={isActiveHash("#projects") ? "page" : undefined}
-              >
-                Projects
-              </Link>
+              <Link href="#projects">Projects</Link>
             </li>
             <li>
-              <Link
-                href="#experience"
-                className={`${linkBase} ${isActiveHash("#experience") ? "text-(--text-primary) font-semibold" : ""}`}
-                aria-current={isActiveHash("#experience") ? "page" : undefined}
-              >
-                Experience
-              </Link>
+              <Link href="#experience">Experience</Link>
             </li>
             <li>
-              <Link
-                href="/blog"
-                className={`${linkBase} ${isActiveRoute("/blog") ? "text-(--text-primary) font-semibold" : ""}`}
-                aria-current={isActiveRoute("/blog") ? "page" : undefined}
-              >
-                Blog
-              </Link>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
 
           <div className="flex items-center gap-4">
-            <ThemeToggle />
             <Link
               href="#contact"
               className="bg-(--primary) text-(--on-primary) px-5 py-2 rounded-md text-sm font-semibold hover:bg-(--primary-hover) transition-all shadow-sm"
