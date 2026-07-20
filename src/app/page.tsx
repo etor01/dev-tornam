@@ -64,8 +64,12 @@ export default function Home() {
 
       <footer className="footer">
         <p>
-          Fun Fact: &quot;manrote&quot; is just my name spelt backwards; {fname}
-          .
+          Fun Fact: &quot;manrote&quot; is just my first name spelt backwards;{" "}
+          {fname}. I was getting etornam.dev but it was taken, so i chose
+          manrote.dev
+          {
+            " [ just decided to spell it backwards and see and it had a nice ring to it, so i went with it. ]"
+          }
         </p>
       </footer>
     </main>
