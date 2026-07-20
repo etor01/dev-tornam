@@ -80,7 +80,7 @@ body {
 
 .socialLinks a:hover {
   cursor: pointer;
-  background-color: #111111;
+  background-color: #6b6b6b;
   transform: translateY(-1px);
 }
 
