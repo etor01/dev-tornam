@@ -11,7 +11,7 @@ export default function Home() {
 
           <div className="socialLinks" aria-label="Social links">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/ahiatakuetornam/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -24,7 +24,7 @@ export default function Home() {
               />
             </a>
             <a
-              href="#"
+              href="https://github.com/etor01"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -32,7 +32,7 @@ export default function Home() {
               <img src="/github-icon.png" alt="GitHub" width={24} height={24} />
             </a>
             <a
-              href="#"
+              href="https://x.com/AhiatakuEtornam"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
