@@ -70,7 +70,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid #111111;
+  border: 1px solid #2c8ae8;
   text-decoration: none;
   transition:
     transform 180ms ease,
@@ -80,7 +80,7 @@ body {
 
 .socialLinks a:hover {
   cursor: pointer;
-  background-color: #6b6b6b;
+  background-color: #3697f7;
   transform: translateY(-1px);
 }
 
@@ -132,7 +132,7 @@ body {
 
 .footer {
   padding-top: 1rem;
-  border-top: 1px solid #9ac0e6;
+  border-top: 1px solid #6d98c3;
   font-size: 0.95rem;
   color: #5b5b5b;
 }
