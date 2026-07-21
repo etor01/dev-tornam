@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   const fname = "etornam";
   const name = "Etornam Ahiataku";
@@ -51,15 +53,9 @@ export default function Home() {
       </section>
 
       <nav className="Pagelinks" aria-label="Quick links">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          Projects
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          Documents
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          My Thoughts
-        </a>
+        <Link href="/projects">Projects</Link>
+        <Link href="/documents">Documents</Link>
+        <Link href="/thoughts">My Thoughts</Link>
       </nav>
 
       <footer className="footer">
