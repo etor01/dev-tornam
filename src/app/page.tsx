@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   const fname = "etornam";
-  const name = "Etornam Ahiataku";
+  const name = "Etornam Kordzo Ahiataku";
   const lead = "Software Engineer; I build things with my computer.";
 
   return (
