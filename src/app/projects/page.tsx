@@ -6,177 +6,149 @@ import { useMemo, useState } from "react";
 const projects = [
   {
     id: 1,
-    name: "Github- Project Card",
+    name: "Mediscan",
     description:
-      "A simple webpage that loads your github projects for you so you can integrate them into your porfolio website or anywhere you want. Built with vanilla JS, HTML and CSS.",
+      "An AI-powered medical imaging analysis tool designed to assist healthcare professionals in early diagnosis of breast related diseases. Integrates local AI model engines.",
     type: "software",
-    link: "#",
-    img: "/github-project-card.png",
+    techStack: ["Next.js", "Ollama", "Llama 3.2"],
+    github: "https://github.com/etor01",
+    live: "#",
   },
   {
     id: 2,
-    name: "Human Computer Interaction - Assignment",
+    name: "AgriBoost",
     description:
-      "A simple one paged website assingment done in KNUST. (ecocycle - recycling educatiion website). Built with Next.js, React, Tailwind CSS and TypeScript. ",
-    type: "hardware",
-    link: "#",
-    img: "/human-computer-interaction-assignment.png",
+      "Agricultural management platform connecting local farmers with distributors through data-driven insights and AI/IoT integration. Streamlines crop listing and bulk ordering.",
+    type: "software",
+    techStack: ["NestJS", "Supabase", "PayStack"],
+    github: "https://github.com/etor01/agriboost2",
+    live: "https://agriboost2-vs4s.vercel.app/",
   },
   {
     id: 3,
-    name: "Pulse Check API",
+    name: "Cleanse Guru",
     description:
-      "A lightweight API for monitoring and reporting system health. Built with Node.js, Express, and MongoDB. THe core of it is a dead mans switch that quickly alerts engineers when a service is down",
+      "A service-booking platform connecting independent cleaners to customers, facilitating automated scheduling, notifications, and secure payment processing.",
     type: "software",
-    link: "#",
-    img: "/pulse-check-api.png",
+    techStack: ["PHP", "Bootstrap", "JavaScript"],
+    github: "https://github.com/etor01",
+    live: "#",
   },
   {
     id: 4,
-    name: "VOP Church Website",
+    name: "EcoCycle",
     description:
-      "A complete church management system for my local church. Built with Next.js, React, Tailwind CSS and TypeScript. Is has a complete admin dashboard for managing church members, events, and donations.",
+      "Smart recycling educational platform developed for Human Computer Interaction to teach local communities sustainable waste management practices.",
     type: "software",
-    link: "#",
-    img: "/vop-church-website.png",
+    techStack: ["JavaScript", "Bootstrap", "HTML5"],
+    github: "https://github.com/etor01/HCI",
+    live: "https://etor01.github.io/HCI/",
   },
   {
     id: 5,
-    name: "Bored Canvas",
+    name: "Github Project Card",
     description:
-      "A one page website for showcasing creative work. Built with Next.js, React, Tailwind CSS and TypeScript. It has a simple and clean design that focuses on the work being showcased.",
+      "A simple web component that pulls public repository information from GitHub and displays it as a styled card for portfolio inclusion.",
     type: "software",
-    link: "#",
-    img: "/bored-canvas.png",
+    techStack: ["JavaScript", "HTML5", "CSS3"],
+    github: "https://github.com/etor01",
+    live: "#",
   },
   {
     id: 6,
-    name: "Agriboost",
+    name: "Pulse Check API",
     description:
-      "An agricultural technology project focused on sustainable farming solutions for Ghanaian farmers. It has AI disease detection, weather forecasting, and a marketplace for farmers to sell their produce. Built with Next.js, React, Tailwind CSS and TypeScript.",
+      "A lightweight system monitoring API featuring a dead-man's switch mechanism to instantly notify maintainers of service downtime.",
     type: "software",
-    link: "#",
-    img: "/agriboost.png",
+    techStack: ["Node.js", "Express", "MongoDB"],
+    github: "https://github.com/etor01",
+    live: "#",
   },
   {
     id: 7,
-    name: "Quiet Queue",
-    description: "A workflow engine that simplifies async collaboration.",
-    type: "software",
-    link: "#",
-    img: "/quiet-queue.png",
+    name: "Signal Loop Board",
+    description:
+      "A custom electronics control board prototype designed to interface sensors with interactive physical installations.",
+    type: "hardware",
+    techStack: ["KiCad", "Arduino", "ESP32"],
+    github: "https://github.com/etor01",
+    live: "#",
   },
   {
     id: 8,
-    name: "Cleanse Guru",
+    name: "Temp Atlas Module",
     description:
-      "An e-commerce platform for luandry and dry cleaning services. You can book a laundry service and have your clothes picked up and delivered to you. Built with Next.js, React, Tailwind CSS and TypeScript.",
-    type: "software",
-    link: "#",
-    img: "/cleanse-guru.png",
-  },
-  {
-    id: 9,
-    name: "Byte Studio",
-    description: "An all-in-one workspace for building side projects.",
-    type: "software",
-    link: "#",
-    img: "/byte-studio.png",
-  },
-  {
-    id: 10,
-    name: "Signal Loop",
-    description: "A compact control board for interactive installations.",
+      "A modular hardware logger equipped with multiple environmental sensors for precision monitoring and atmospheric data logging.",
     type: "hardware",
-    link: "#",
-    img: "/signal-loop.png",
-  },
-  {
-    id: 11,
-    name: "Nova Notes",
-    description:
-      "A note-taking system designed around fast capture and recall.",
-    type: "software",
-    link: "#",
-    img: "/nova-notes.png",
-  },
-  {
-    id: 12,
-    name: "Pulse Case",
-    description:
-      "A rugged enclosure concept for small electronics experiments.",
-    type: "hardware",
-    link: "#",
-    img: "/pulse-case.png",
-  },
-  {
-    id: 13,
-    name: "Stack Vault",
-    description:
-      "A personal project archive for keeping experiments organized.",
-    type: "software",
-    link: "#",
-    img: "/stack-vault.png",
-  },
-  {
-    id: 14,
-    name: "Motion Rail",
-    description:
-      "A compact motion test rig built to validate prototypes quickly.",
-    type: "hardware",
-    link: "#",
-    img: "/motion-rail.png",
-  },
-  {
-    id: 15,
-    name: "Relay Studio",
-    description:
-      "A creative environment for shaping product ideas into execution.",
-    type: "software",
-    link: "#",
-    img: "/relay-studio.png",
-  },
-  {
-    id: 16,
-    name: "Temp Atlas",
-    description: "A sensor board for environmental monitoring and logging.",
-    type: "hardware",
-    link: "#",
-    img: "/temp-atlas.png",
-  },
-  {
-    id: 17,
-    name: "Parse Garden",
-    description: "A data shaping toolkit for messy product inputs.",
-    type: "software",
-    link: "#",
-    img: "/parse-garden.png",
-  },
-  {
-    id: 18,
-    name: "Anchor Module",
-    description: "A modular hardware rig for rapid experimentation.",
-    type: "hardware",
-    link: "#",
-    img: "/anchor-module.png",
-  },
-  {
-    id: 19,
-    name: "Flux Lab",
-    description: "A prototype workspace for testing UI ideas in real time.",
-    type: "software",
-    link: "#",
-    img: "/flux-lab.png",
-  },
-  {
-    id: 20,
-    name: "Drift Board",
-    description: "A portable electronics board built for field testing.",
-    type: "hardware",
-    link: "#",
-    img: "/drift-board.png",
+    techStack: ["Arduino", "Sensors", "I2C"],
+    github: "https://github.com/etor01",
+    live: "#",
   },
 ];
+
+function ProjectVisual({ type, name }: { type: string; name: string }) {
+  if (type === "software") {
+    return (
+      <div className="projectImage" style={{ position: "relative", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+        {/* Editor Title Bar */}
+        <div style={{ display: "flex", alignItems: "center", gap: "5px", padding: "8px 12px", borderBottom: "2px solid var(--ink-border)", background: "var(--badge-bg)" }}>
+          <span style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid var(--ink-border)", background: "transparent" }}></span>
+          <span style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid var(--ink-border)", background: "transparent" }}></span>
+          <span style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid var(--ink-border)", background: "transparent" }}></span>
+          <span style={{ marginLeft: "auto", fontSize: "0.6rem", fontFamily: "var(--font-mono), monospace", color: "var(--muted)", textTransform: "uppercase" }}>src/{name.toLowerCase().replace(/\s+/g, "-")}.sh</span>
+        </div>
+        {/* Code Layout Lines */}
+        <div style={{ padding: "12px", flexGrow: 1, display: "flex", flexDirection: "column", gap: "6px", fontFamily: "var(--font-mono), monospace", fontSize: "0.65rem", color: "var(--text-secondary)", backgroundColor: "#ffffff" }}>
+          <div><span style={{ color: "var(--accent-blue)" }}>$</span> npm run build</div>
+          <div style={{ width: "85%", height: "4px", backgroundColor: "rgba(17, 17, 17, 0.08)", borderRadius: "2px" }}></div>
+          <div style={{ width: "60%", height: "4px", backgroundColor: "rgba(17, 17, 17, 0.08)", borderRadius: "2px" }}></div>
+          <div style={{ width: "70%", height: "4px", backgroundColor: "rgba(37, 99, 235, 0.2)", borderRadius: "2px" }}></div>
+          <div style={{ width: "40%", height: "4px", backgroundColor: "rgba(17, 17, 17, 0.08)", borderRadius: "2px" }}></div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="projectImage" style={{ position: "relative", overflow: "hidden", backgroundColor: "#ffffff", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        {/* Hardware Schematic Drawing */}
+        <svg width="100%" height="100%" style={{ opacity: 0.85, minHeight: "110px" }} viewBox="0 0 300 120">
+          {/* Grid lines in background */}
+          <defs>
+            <pattern id="dotGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="0.5" fill="rgba(17, 17, 17, 0.15)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dotGrid)" />
+
+          {/* Circuit tracks */}
+          <line x1="20" y1="60" x2="100" y2="60" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <line x1="100" y1="60" x2="130" y2="30" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <line x1="130" y1="30" x2="220" y2="30" stroke="var(--ink-border)" strokeWidth="1.5" />
+          
+          <line x1="20" y1="20" x2="70" y2="20" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <line x1="70" y1="20" x2="110" y2="60" stroke="var(--ink-border)" strokeWidth="1.5" />
+          
+          <line x1="50" y1="100" x2="160" y2="100" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <line x1="160" y1="100" x2="190" y2="70" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <line x1="190" y1="70" x2="260" y2="70" stroke="var(--ink-border)" strokeWidth="1.5" />
+          
+          {/* Solder Nodes */}
+          <circle cx="100" cy="60" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <circle cx="130" cy="30" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <circle cx="70" cy="20" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <circle cx="160" cy="100" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
+          
+          {/* Chip Center */}
+          <rect x="220" y="18" width="24" height="24" rx="2" fill="var(--badge-bg)" stroke="var(--ink-border)" strokeWidth="1.5" />
+          <line x1="220" y1="23" x2="212" y2="23" stroke="var(--ink-border)" strokeWidth="1" />
+          <line x1="220" y1="31" x2="212" y2="31" stroke="var(--ink-border)" strokeWidth="1" />
+          <line x1="232" y1="42" x2="232" y2="48" stroke="var(--ink-border)" strokeWidth="1" />
+        </svg>
+        <span style={{ position: "absolute", bottom: "8px", right: "12px", fontSize: "0.6rem", fontFamily: "var(--font-mono), monospace", color: "var(--muted)", textTransform: "uppercase" }}>pcb_rev_a</span>
+      </div>
+    );
+  }
+}
 
 export default function ProjectsPage() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([
@@ -191,8 +163,10 @@ export default function ProjectsPage() {
   const toggleType = (type: string) => {
     setSelectedTypes((current) =>
       current.includes(type)
-        ? current.filter((item) => item !== type)
-        : [...current, type],
+        ? current.length > 1
+          ? current.filter((item) => item !== type)
+          : current
+        : [...current, type]
     );
   };
 
@@ -203,46 +177,87 @@ export default function ProjectsPage() {
           <div>
             <p className="eyebrow">Projects</p>
             <h1>Selected work and prototypes</h1>
-            <p>Filter by project type to explore the collection.</p>
+            <p>A catalog of digital tools and physical prototypes that I have designed and engineered.</p>
           </div>
 
-          <div className="filterGroup" aria-label="Project filters">
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedTypes.includes("software")}
-                onChange={() => toggleType("software")}
-              />
-              <span>Software</span>
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                checked={selectedTypes.includes("hardware")}
-                onChange={() => toggleType("hardware")}
-              />
-              <span>Hardware</span>
-            </label>
+          <div className="filterGroup" aria-label="Project filters" style={{ display: "flex", gap: "0.8rem" }}>
+            <button
+              onClick={() => toggleType("software")}
+              style={{
+                fontFamily: "var(--font-mono), monospace",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                padding: "0.5rem 1.1rem",
+                border: "2px solid var(--ink-border)",
+                borderRadius: "999px",
+                backgroundColor: selectedTypes.includes("software") ? "var(--accent-blue)" : "var(--surface-card)",
+                color: selectedTypes.includes("software") ? "var(--surface-card)" : "var(--text-primary)",
+                boxShadow: "2px 2px 0px 0px var(--ink-border)",
+                cursor: "pointer",
+                transition: "all 120ms ease",
+              }}
+            >
+              Software
+            </button>
+            <button
+              onClick={() => toggleType("hardware")}
+              style={{
+                fontFamily: "var(--font-mono), monospace",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                padding: "0.5rem 1.1rem",
+                border: "2px solid var(--ink-border)",
+                borderRadius: "999px",
+                backgroundColor: selectedTypes.includes("hardware") ? "var(--accent-blue)" : "var(--surface-card)",
+                color: selectedTypes.includes("hardware") ? "var(--surface-card)" : "var(--text-primary)",
+                boxShadow: "2px 2px 0px 0px var(--ink-border)",
+                cursor: "pointer",
+                transition: "all 120ms ease",
+              }}
+            >
+              Hardware
+            </button>
           </div>
         </header>
 
         <div className="projectGrid">
           {visibleProjects.map((project) => (
             <article key={project.id} className="projectCard">
-              <img
-                src="/twitter-icon.png"
-                alt={project.name}
-                className="projectImage"
-              />
+              <ProjectVisual type={project.type} name={project.name} />
               <div className="projectBody">
-                <h2>{project.name}</h2>
-                <p>{project.description}</p>
+                <div>
+                  <h2>{project.name}</h2>
+                  <p>{project.description}</p>
+                </div>
+                <div>
+                  <div className="projectTags">
+                    {project.techStack.map((tech) => (
+                      <span key={tech} className="techBadge">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="projectActions">
+                    {project.github !== "#" && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        Repository →
+                      </a>
+                    )}
+                    {project.live !== "#" && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        Live Site ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
             </article>
           ))}
         </div>
 
-        <p style={{ marginTop: "1rem" }}>
+        <p style={{ marginTop: "2rem" }}>
           <Link href="/" className="backLink">
             Back home
           </Link>
