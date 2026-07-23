@@ -20,10 +20,26 @@ const documents = [
     downloadHref: "/Etornam_Kordzo_Ahiataku_Certificates.pdf",
     viewHref: "/Etornam_Kordzo_Ahiataku_Certificates.pdf",
   },
+];
+
+const references = [
   {
-    title: "Quick References",
-    description:
-      "Get a quick word about me from the contacts below. Please be kind and respect their time",
+    name: "Dev Kweku",
+    role: "Software Engineer at Google",
+    email: "kweku.dev@google.com",
+    phone: "(123) 456-7890",
+  },
+  {
+    name: "Nana Kofi",
+    role: "Project Lead at Meta",
+    email: "nana.kofi@meta.org",
+    phone: "(123) 456-7890",
+  },
+  {
+    name: "Tornam Kojo",
+    role: "Software Engineer at Intel",
+    email: "tee.dev@intel.com",
+    phone: "(123) 456-7890",
   },
 ];
 
@@ -34,71 +50,52 @@ export default function DocumentsPage() {
         <header className="pageHeader">
           <div>
             <p className="eyebrow">Documents</p>
-            <h1>My Electronic Documents Archive</h1>
+            <h1>Electronic Documents Archive</h1>
             <p>
-              This files that represent my professional profile. As you preview
-              or download them bare in mind laws regarding data collection and
-              user data safety.
+              Professional documents and assets representing my profile. As you preview or download them, please note standard data and privacy considerations.
             </p>
           </div>
         </header>
 
         <div className="documentList">
-          {documents.map((document) => (
-            <article key={document.title} className="documentItem">
-              <h2>{document.title}</h2>
-              <p>{document.description}</p>
-              {document.title !== "Quick References" ? (
-                <div className="documentActions">
-                  <a href={document.downloadHref} download>
-                    Download
-                  </a>
-                  <a
-                    href={document.viewHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View
-                  </a>
-                </div>
-              ) : (
-                <div className="documentActions">
-                  {/*a nice ul of the references, name, company, and contact information(email and telephone) */}
-                  <div>
-                    <ul>
-                      <li>
-                        <strong>Dev Kweku</strong> - Software Engineer at Google
-                        <br />
-                        Email: kweku.dev@google.com
-                        <br />
-                        Phone: (123) 456-7890
-                      </li>
-                      <br />
-                      <li>
-                        <strong>Nana Kofi</strong> - Project Lead at Meta
-                        <br />
-                        Email: nana.kof@meta.org
-                        <br />
-                        Phone: (123) 456-7890
-                      </li>
-                      <br />
-                      <li>
-                        <strong>Tornam Kojo</strong> - Software Engineer at
-                        Intel
-                        <br />
-                        Email: tee.dev@intel.com
-                        <br />
-                        Phone: (123) 456-7890
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              )}
+          {documents.map((doc) => (
+            <article key={doc.title} className="documentItem">
+              <h2>{doc.title}</h2>
+              <p>{doc.description}</p>
+              <div className="documentActions">
+                <a href={doc.downloadHref} download>
+                  Download ↓
+                </a>
+                <a
+                  href={doc.viewHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View ↗
+                </a>
+              </div>
             </article>
           ))}
+
+          <article className="documentItem">
+            <h2>Quick References</h2>
+            <p>
+              Get a reference from colleagues or mentors I have worked with. Please respect their time and communication boundaries.
+            </p>
+            <ul className="referenceList">
+              {references.map((ref) => (
+                <li key={ref.name} className="referenceItem">
+                  <strong>{ref.name}</strong>
+                  <div style={{ color: "var(--accent-blue)", margin: "0.25rem 0", fontWeight: 700 }}>{ref.role}</div>
+                  <div>Email: {ref.email}</div>
+                  <div>Phone: {ref.phone}</div>
+                </li>
+              ))}
+            </ul>
+          </article>
         </div>
 
-        <p style={{ marginTop: "1rem" }}>
+        <p style={{ marginTop: "2rem" }}>
           <Link href="/" className="backLink">
             Back home
           </Link>
