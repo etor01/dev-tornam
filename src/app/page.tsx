@@ -3,7 +3,8 @@ import Link from "next/link";
 export default function Home() {
   const fname = "etornam";
   const name = "Etornam Kordzo Ahiataku";
-  const lead = "Software Engineer • Builder of functional, user-centric systems • Exploring cloud and full-stack environments.";
+  const lead =
+    "Software Engineer • I build functional, User-centric systems • Exploring cloud and backend environments.";
 
   return (
     <main className="container">
@@ -59,29 +60,115 @@ export default function Home() {
       </nav>
 
       <footer className="footer">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", borderBottom: "1px dashed var(--ink-border)", paddingBottom: "1rem", marginBottom: "1rem" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "1rem",
+            borderBottom: "1px dashed var(--ink-border)",
+            paddingBottom: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
           <div>
-            <strong style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.1em", color: "var(--text-primary)" }}>SHEET TITLE</strong>
-            <p style={{ margin: "0.2rem 0 0", fontSize: "0.85rem", fontWeight: 700 }}>PORTFOLIO CORE</p>
+            <strong
+              style={{
+                display: "block",
+                fontSize: "0.7rem",
+                letterSpacing: "0.1em",
+                color: "var(--text-primary)",
+              }}
+            >
+              SHEET TITLE
+            </strong>
+            <p
+              style={{
+                margin: "0.2rem 0 0",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+              }}
+            >
+              PORTFOLIO CARD
+            </p>
           </div>
           <div>
-            <strong style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.1em", color: "var(--text-primary)" }}>STYLE SPEC</strong>
-            <p style={{ margin: "0.2rem 0 0", fontSize: "0.85rem", fontWeight: 700 }}>BLUEPRINT V1.0</p>
+            <strong
+              style={{
+                display: "block",
+                fontSize: "0.7rem",
+                letterSpacing: "0.1em",
+                color: "var(--text-primary)",
+              }}
+            >
+              STYLE SPEC
+            </strong>
+            <p
+              style={{
+                margin: "0.2rem 0 0",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+              }}
+            >
+              BLUEPRINT V1.0
+            </p>
           </div>
           <div>
-            <strong style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.1em", color: "var(--text-primary)" }}>ENGINEER</strong>
-            <p style={{ margin: "0.2rem 0 0", fontSize: "0.85rem", fontWeight: 700 }}>E. K. AHIATAKU</p>
+            <strong
+              style={{
+                display: "block",
+                fontSize: "0.7rem",
+                letterSpacing: "0.1em",
+                color: "var(--text-primary)",
+              }}
+            >
+              ENGINEER
+            </strong>
+            <p
+              style={{
+                margin: "0.2rem 0 0",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+              }}
+            >
+              E. K. AHIATAKU
+            </p>
           </div>
           <div>
-            <strong style={{ display: "block", fontSize: "0.7rem", letterSpacing: "0.1em", color: "var(--text-primary)" }}>ORIGIN ALIAS</strong>
-            <p style={{ margin: "0.2rem 0 0", fontSize: "0.85rem", fontWeight: 700 }}>&quot;{fname}&quot; (REVERSED)</p>
+            <strong
+              style={{
+                display: "block",
+                fontSize: "0.7rem",
+                letterSpacing: "0.1em",
+                color: "var(--text-primary)",
+              }}
+            >
+              ORIGIN ALIAS
+            </strong>
+            <p
+              style={{
+                margin: "0.2rem 0 0",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+              }}
+            >
+              &quot;{fname}&quot; (REVERSED)
+            </p>
           </div>
         </div>
-        <p style={{ fontSize: "0.75rem", color: "var(--muted)", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
-          Fun Fact: I was searching for etornam.dev but it was taken, so I decided to spell my first name backwards. It had a nice ring to it, so I registered manrote.dev.
+        <p
+          style={{
+            fontSize: "0.75rem",
+            color: "var(--muted)",
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            margin: 0,
+          }}
+        >
+          Fun Fact: I was searching for etornam.dev but it was taken, so I
+          decided to spell my first name backwards. It had a nice ring to it, so
+          I registered manrote.dev.
         </p>
       </footer>
     </main>
   );
 }
-

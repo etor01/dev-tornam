@@ -22,7 +22,7 @@ const projects = [
     type: "software",
     techStack: ["NestJS", "Supabase", "PayStack"],
     github: "https://github.com/etor01/agriboost2",
-    live: "https://agriboost2-vs4s.vercel.app/",
+    live: "https://agriboost2.vercel.app/",
   },
   {
     id: 3,
@@ -89,62 +89,302 @@ const projects = [
 function ProjectVisual({ type, name }: { type: string; name: string }) {
   if (type === "software") {
     return (
-      <div className="projectImage" style={{ position: "relative", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+      <div
+        className="projectImage"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {/* Editor Title Bar */}
-        <div style={{ display: "flex", alignItems: "center", gap: "5px", padding: "8px 12px", borderBottom: "2px solid var(--ink-border)", background: "var(--badge-bg)" }}>
-          <span style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid var(--ink-border)", background: "transparent" }}></span>
-          <span style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid var(--ink-border)", background: "transparent" }}></span>
-          <span style={{ width: "8px", height: "8px", borderRadius: "50%", border: "1.5px solid var(--ink-border)", background: "transparent" }}></span>
-          <span style={{ marginLeft: "auto", fontSize: "0.6rem", fontFamily: "var(--font-mono), monospace", color: "var(--muted)", textTransform: "uppercase" }}>src/{name.toLowerCase().replace(/\s+/g, "-")}.sh</span>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+            padding: "8px 12px",
+            borderBottom: "2px solid var(--ink-border)",
+            background: "var(--badge-bg)",
+          }}
+        >
+          <span
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              border: "1.5px solid var(--ink-border)",
+              background: "transparent",
+            }}
+          ></span>
+          <span
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              border: "1.5px solid var(--ink-border)",
+              background: "transparent",
+            }}
+          ></span>
+          <span
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              border: "1.5px solid var(--ink-border)",
+              background: "transparent",
+            }}
+          ></span>
+          <span
+            style={{
+              marginLeft: "auto",
+              fontSize: "0.6rem",
+              fontFamily: "var(--font-mono), monospace",
+              color: "var(--muted)",
+              textTransform: "uppercase",
+            }}
+          >
+            src/{name.toLowerCase().replace(/\s+/g, "-")}.sh
+          </span>
         </div>
         {/* Code Layout Lines */}
-        <div style={{ padding: "12px", flexGrow: 1, display: "flex", flexDirection: "column", gap: "6px", fontFamily: "var(--font-mono), monospace", fontSize: "0.65rem", color: "var(--text-secondary)", backgroundColor: "#ffffff" }}>
-          <div><span style={{ color: "var(--accent-blue)" }}>$</span> npm run build</div>
-          <div style={{ width: "85%", height: "4px", backgroundColor: "rgba(17, 17, 17, 0.08)", borderRadius: "2px" }}></div>
-          <div style={{ width: "60%", height: "4px", backgroundColor: "rgba(17, 17, 17, 0.08)", borderRadius: "2px" }}></div>
-          <div style={{ width: "70%", height: "4px", backgroundColor: "rgba(37, 99, 235, 0.2)", borderRadius: "2px" }}></div>
-          <div style={{ width: "40%", height: "4px", backgroundColor: "rgba(17, 17, 17, 0.08)", borderRadius: "2px" }}></div>
+        <div
+          style={{
+            padding: "12px",
+            flexGrow: 1,
+            display: "flex",
+            flexDirection: "column",
+            gap: "6px",
+            fontFamily: "var(--font-mono), monospace",
+            fontSize: "0.65rem",
+            color: "var(--text-secondary)",
+            backgroundColor: "#ffffff",
+          }}
+        >
+          <div>
+            <span style={{ color: "var(--accent-blue)" }}>$</span> npm run build
+          </div>
+          <div
+            style={{
+              width: "85%",
+              height: "4px",
+              backgroundColor: "rgba(17, 17, 17, 0.08)",
+              borderRadius: "2px",
+            }}
+          ></div>
+          <div
+            style={{
+              width: "60%",
+              height: "4px",
+              backgroundColor: "rgba(17, 17, 17, 0.08)",
+              borderRadius: "2px",
+            }}
+          ></div>
+          <div
+            style={{
+              width: "70%",
+              height: "4px",
+              backgroundColor: "rgba(37, 99, 235, 0.2)",
+              borderRadius: "2px",
+            }}
+          ></div>
+          <div
+            style={{
+              width: "40%",
+              height: "4px",
+              backgroundColor: "rgba(17, 17, 17, 0.08)",
+              borderRadius: "2px",
+            }}
+          ></div>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="projectImage" style={{ position: "relative", overflow: "hidden", backgroundColor: "#ffffff", padding: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div
+        className="projectImage"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          backgroundColor: "#ffffff",
+          padding: "12px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         {/* Hardware Schematic Drawing */}
-        <svg width="100%" height="100%" style={{ opacity: 0.85, minHeight: "110px" }} viewBox="0 0 300 120">
+        <svg
+          width="100%"
+          height="100%"
+          style={{ opacity: 0.85, minHeight: "110px" }}
+          viewBox="0 0 300 120"
+        >
           {/* Grid lines in background */}
           <defs>
-            <pattern id="dotGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+            <pattern
+              id="dotGrid"
+              width="10"
+              height="10"
+              patternUnits="userSpaceOnUse"
+            >
               <circle cx="1" cy="1" r="0.5" fill="rgba(17, 17, 17, 0.15)" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dotGrid)" />
 
           {/* Circuit tracks */}
-          <line x1="20" y1="60" x2="100" y2="60" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <line x1="100" y1="60" x2="130" y2="30" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <line x1="130" y1="30" x2="220" y2="30" stroke="var(--ink-border)" strokeWidth="1.5" />
-          
-          <line x1="20" y1="20" x2="70" y2="20" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <line x1="70" y1="20" x2="110" y2="60" stroke="var(--ink-border)" strokeWidth="1.5" />
-          
-          <line x1="50" y1="100" x2="160" y2="100" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <line x1="160" y1="100" x2="190" y2="70" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <line x1="190" y1="70" x2="260" y2="70" stroke="var(--ink-border)" strokeWidth="1.5" />
-          
+          <line
+            x1="20"
+            y1="60"
+            x2="100"
+            y2="60"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="100"
+            y1="60"
+            x2="130"
+            y2="30"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="130"
+            y1="30"
+            x2="220"
+            y2="30"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+
+          <line
+            x1="20"
+            y1="20"
+            x2="70"
+            y2="20"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="70"
+            y1="20"
+            x2="110"
+            y2="60"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+
+          <line
+            x1="50"
+            y1="100"
+            x2="160"
+            y2="100"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="160"
+            y1="100"
+            x2="190"
+            y2="70"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="190"
+            y1="70"
+            x2="260"
+            y2="70"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+
           {/* Solder Nodes */}
-          <circle cx="100" cy="60" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <circle cx="130" cy="30" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <circle cx="70" cy="20" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <circle cx="160" cy="100" r="3.5" fill="#ffffff" stroke="var(--ink-border)" strokeWidth="1.5" />
-          
+          <circle
+            cx="100"
+            cy="60"
+            r="3.5"
+            fill="#ffffff"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <circle
+            cx="130"
+            cy="30"
+            r="3.5"
+            fill="#ffffff"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <circle
+            cx="70"
+            cy="20"
+            r="3.5"
+            fill="#ffffff"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <circle
+            cx="160"
+            cy="100"
+            r="3.5"
+            fill="#ffffff"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+
           {/* Chip Center */}
-          <rect x="220" y="18" width="24" height="24" rx="2" fill="var(--badge-bg)" stroke="var(--ink-border)" strokeWidth="1.5" />
-          <line x1="220" y1="23" x2="212" y2="23" stroke="var(--ink-border)" strokeWidth="1" />
-          <line x1="220" y1="31" x2="212" y2="31" stroke="var(--ink-border)" strokeWidth="1" />
-          <line x1="232" y1="42" x2="232" y2="48" stroke="var(--ink-border)" strokeWidth="1" />
+          <rect
+            x="220"
+            y="18"
+            width="24"
+            height="24"
+            rx="2"
+            fill="var(--badge-bg)"
+            stroke="var(--ink-border)"
+            strokeWidth="1.5"
+          />
+          <line
+            x1="220"
+            y1="23"
+            x2="212"
+            y2="23"
+            stroke="var(--ink-border)"
+            strokeWidth="1"
+          />
+          <line
+            x1="220"
+            y1="31"
+            x2="212"
+            y2="31"
+            stroke="var(--ink-border)"
+            strokeWidth="1"
+          />
+          <line
+            x1="232"
+            y1="42"
+            x2="232"
+            y2="48"
+            stroke="var(--ink-border)"
+            strokeWidth="1"
+          />
         </svg>
-        <span style={{ position: "absolute", bottom: "8px", right: "12px", fontSize: "0.6rem", fontFamily: "var(--font-mono), monospace", color: "var(--muted)", textTransform: "uppercase" }}>pcb_rev_a</span>
+        <span
+          style={{
+            position: "absolute",
+            bottom: "8px",
+            right: "12px",
+            fontSize: "0.6rem",
+            fontFamily: "var(--font-mono), monospace",
+            color: "var(--muted)",
+            textTransform: "uppercase",
+          }}
+        >
+          pcb_rev_a
+        </span>
       </div>
     );
   }
@@ -166,7 +406,7 @@ export default function ProjectsPage() {
         ? current.length > 1
           ? current.filter((item) => item !== type)
           : current
-        : [...current, type]
+        : [...current, type],
     );
   };
 
@@ -177,10 +417,17 @@ export default function ProjectsPage() {
           <div>
             <p className="eyebrow">Projects</p>
             <h1>Selected work and prototypes</h1>
-            <p>A catalog of digital tools and physical prototypes that I have designed and engineered.</p>
+            <p>
+              A catalog of digital tools and physical prototypes that I have
+              designed and engineered.
+            </p>
           </div>
 
-          <div className="filterGroup" aria-label="Project filters" style={{ display: "flex", gap: "0.8rem" }}>
+          <div
+            className="filterGroup"
+            aria-label="Project filters"
+            style={{ display: "flex", gap: "0.8rem" }}
+          >
             <button
               onClick={() => toggleType("software")}
               style={{
@@ -191,8 +438,12 @@ export default function ProjectsPage() {
                 padding: "0.5rem 1.1rem",
                 border: "2px solid var(--ink-border)",
                 borderRadius: "999px",
-                backgroundColor: selectedTypes.includes("software") ? "var(--accent-blue)" : "var(--surface-card)",
-                color: selectedTypes.includes("software") ? "var(--surface-card)" : "var(--text-primary)",
+                backgroundColor: selectedTypes.includes("software")
+                  ? "var(--accent-blue)"
+                  : "var(--surface-card)",
+                color: selectedTypes.includes("software")
+                  ? "var(--surface-card)"
+                  : "var(--text-primary)",
                 boxShadow: "2px 2px 0px 0px var(--ink-border)",
                 cursor: "pointer",
                 transition: "all 120ms ease",
@@ -210,8 +461,12 @@ export default function ProjectsPage() {
                 padding: "0.5rem 1.1rem",
                 border: "2px solid var(--ink-border)",
                 borderRadius: "999px",
-                backgroundColor: selectedTypes.includes("hardware") ? "var(--accent-blue)" : "var(--surface-card)",
-                color: selectedTypes.includes("hardware") ? "var(--surface-card)" : "var(--text-primary)",
+                backgroundColor: selectedTypes.includes("hardware")
+                  ? "var(--accent-blue)"
+                  : "var(--surface-card)",
+                color: selectedTypes.includes("hardware")
+                  ? "var(--surface-card)"
+                  : "var(--text-primary)",
                 boxShadow: "2px 2px 0px 0px var(--ink-border)",
                 cursor: "pointer",
                 transition: "all 120ms ease",
@@ -241,12 +496,20 @@ export default function ProjectsPage() {
                   </div>
                   <div className="projectActions">
                     {project.github !== "#" && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Repository →
                       </a>
                     )}
                     {project.live !== "#" && (
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Live Site ↗
                       </a>
                     )}
