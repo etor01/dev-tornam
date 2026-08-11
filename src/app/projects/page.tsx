@@ -10,9 +10,9 @@ const projects = [
     description:
       "An AI-powered medical imaging analysis tool designed to assist healthcare professionals in early diagnosis of breast related diseases. Integrates local AI model engines.",
     type: "software",
-    techStack: ["Next.js", "Ollama", "Llama 3.2"],
-    github: "https://github.com/etor01",
-    live: "#",
+    techStack: ["REST API", "Ollama", "Llama 3.2", "HTML", "JavaScript"],
+    github: "https://github.com/etor01/MediScan-Ai",
+    live: "https://etor01.github.io/MediScan-Ai/",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const projects = [
     description:
       "Agricultural management platform connecting local farmers with distributors through data-driven insights and AI/IoT integration. Streamlines crop listing and bulk ordering.",
     type: "software",
-    techStack: ["NestJS", "Supabase", "PayStack"],
+    techStack: ["NextJS", "Supabase", "PayStack", "Tailwind", "HuggingFace"],
     github: "https://github.com/etor01/agriboost2",
     live: "https://agriboost2.vercel.app/",
   },
@@ -52,7 +52,7 @@ const projects = [
     type: "software",
     techStack: ["JavaScript", "HTML5", "CSS3"],
     github: "https://github.com/etor01",
-    live: "#",
+    live: "https://etor01.github.io/Github-Projects-Card/",
   },
   {
     id: 6,
@@ -62,28 +62,28 @@ const projects = [
     type: "software",
     techStack: ["Node.js", "Express", "MongoDB"],
     github: "https://github.com/etor01",
-    live: "#",
+    live: "https://pulse-check-api.onrender.com/",
   },
-  {
-    id: 7,
-    name: "Signal Loop Board",
-    description:
-      "A custom electronics control board prototype designed to interface sensors with interactive physical installations.",
-    type: "hardware",
-    techStack: ["KiCad", "Arduino", "ESP32"],
-    github: "https://github.com/etor01",
-    live: "#",
-  },
-  {
-    id: 8,
-    name: "Temp Atlas Module",
-    description:
-      "A modular hardware logger equipped with multiple environmental sensors for precision monitoring and atmospheric data logging.",
-    type: "hardware",
-    techStack: ["Arduino", "Sensors", "I2C"],
-    github: "https://github.com/etor01",
-    live: "#",
-  },
+  // {
+  //   id: 7,
+  //   name: "Signal Loop Board",
+  //   description:
+  //     "A custom electronics control board prototype designed to interface sensors with interactive physical installations.",
+  //   type: "hardware",
+  //   techStack: ["KiCad", "Arduino", "ESP32"],
+  //   github: "https://github.com/etor01",
+  //   live: "#",
+  // },
+  // {
+  //   id: 8,
+  //   name: "Temp Atlas Module",
+  //   description:
+  //     "A modular hardware logger equipped with multiple environmental sensors for precision monitoring and atmospheric data logging.",
+  //   type: "hardware",
+  //   techStack: ["Arduino", "Sensors", "I2C"],
+  //   github: "https://github.com/etor01",
+  //   live: "#",
+  // },
 ];
 
 function ProjectVisual({ type, name }: { type: string; name: string }) {
