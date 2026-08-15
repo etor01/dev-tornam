@@ -35,6 +35,12 @@ const thoughts: Thoughts[] = [
       "Constraints often sharpen creativity rather than stifle it. They force you to make better choices and stick to clearer priorities.",
     date: "2026-04-15",
   },
+  {
+   title: "I believe we can become immortal",
+   message: "Our bodies are biological machines right ? let's start from there. What do you think will be the possibility if we can get the entire 
+   blue print of this machine, architecture and source code. There is more to life"
+   date: "2026-08-15",
+  },
 ];
 
 export { thoughts };
