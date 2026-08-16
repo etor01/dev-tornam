@@ -12,7 +12,7 @@ const thoughts: Thoughts[] = [
     date: "2026-07-12",
   },
   {
-    title: "Why design clarity matters",
+    title: "I love design clarity",
     message:
       "Simple interfaces reduce cognitive friction. They make complex systems feel intuitive and welcoming.",
     date: "2026-06-28",
