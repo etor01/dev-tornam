@@ -29,11 +29,11 @@ const documents = [
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const TOPICS = [
+  "General Question",
   "Project Collaboration",
   "Reference Request",
   "Tech Stack Inquiry",
   "Job Opportunity",
-  "General Question",
   "Other",
 ];
 
@@ -45,6 +45,26 @@ export default function DocumentsPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    // Manual validation (noValidate disables browser built-ins)
+    const data = new FormData(formRef.current);
+    const name = (data.get("from_name") as string)?.trim();
+    const email = (data.get("reply_to") as string)?.trim();
+    const topic = (data.get("topic") as string)?.trim();
+    const message = (data.get("message") as string)?.trim();
+
+    if (!name || !email || !topic || !message) {
+      setStatus("error");
+      setErrorMsg("Please fill in all fields before sending.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setStatus("error");
+      setErrorMsg("Please enter a valid email address.");
+      return;
+    }
 
     setStatus("loading");
     setErrorMsg("");
@@ -121,6 +141,12 @@ export default function DocumentsPage() {
               ref={formRef}
               className="contactForm"
               onSubmit={handleSubmit}
+              onChange={() => {
+                if (status === "error") {
+                  setStatus("idle");
+                  setErrorMsg("");
+                }
+              }}
               noValidate
             >
               {/* Row: Name + Email */}
