@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { Send, Loader2 } from "lucide-react";
 
 const documents = [
   {
@@ -25,35 +26,45 @@ const documents = [
   },
 ];
 
-const references = [
-  {
-    name: "Dr. Kwabena Owusu Agyemang",
-    role: "KNUST Lecturer / Exams Officer - (2026)",
-    email: "kwabenaoa@knust.edu.gh",
-    phone: "+233 244 727 596",
-  },
-  {
-    name: "Dr. Benjamin Tei Partey",
-    role: "KNUST Lecturer / 4th Year Project Supervisor - (2026)",
-    email: "benjamin.tei@knust.edu.gh",
-    phone: "+233 243 663 534",
-  },
-  {
-    name: "Dr. Anthony Tettey Junior",
-    role: "KNMH - Health Administrator - (2024)",
-    email: "anthonytettey@gmail.com",
-    phone: "+233 246 708 030",
-  },
+type FormStatus = "idle" | "loading" | "success" | "error";
+
+const TOPICS = [
+  "Project Collaboration",
+  "Reference Request",
+  "Tech Stack Inquiry",
+  "Job Opportunity",
+  "General Question",
+  "Other",
 ];
 
 export default function DocumentsPage() {
-  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleCopy = (key: string, value: string) => {
-    navigator.clipboard.writeText(value);
-    setCopiedKey(key);
-    setTimeout(() => setCopiedKey(null), 1500);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setStatus("loading");
+    setErrorMsg("");
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
+      );
+      setStatus("success");
+      formRef.current.reset();
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Message failed to send. Please try again.");
+      console.error("EmailJS error:", err);
+    }
   };
+
   return (
     <main className="contentPage">
       <section className="pageShell">
@@ -62,9 +73,11 @@ export default function DocumentsPage() {
             <p className="eyebrow">Documents</p>
             <h1>Electronic Documents Archive</h1>
             <p>
-              Professional documents and assets representing my profile. As you
-              preview or download them, please note standard data and privacy
-              considerations.
+              Here is a list of my professional documents for your review. For
+              more details please use the contact form below.{" "}
+              <span className="italic font-bold text-blue-600 dark:text-blue-500 text-xs">
+                (data privacy laws apply)
+              </span>
             </p>
           </div>
         </header>
@@ -89,64 +102,117 @@ export default function DocumentsPage() {
             </article>
           ))}
 
+          {/*  Contact Form  */}
           <article className="documentItem">
-            <h2>Quick References</h2>
-            <p>
-              Get a reference from colleagues or mentors I have worked with.
-              Please respect their time and communication boundaries.
+            <p className="eyebrow" style={{ marginBottom: "0.25rem" }}>
+              Transmit
             </p>
-            <ul className="referenceList">
-              {references.map((ref) => (
-                <li key={ref.name} className="referenceItem">
-                  <strong>{ref.name}</strong>
-                  {/* role */}
-                  <div
-                    style={{
-                      color: "var(--accent-blue)",
-                      margin: "0.25rem 0",
-                      fontWeight: 700,
-                    }}
-                  >
-                    {ref.role}
-                  </div>
-                  {/* email */}
-                  <div>
-                    Email: <span className="email link">{ref.email}</span>
-                    <button
-                      className=" text-gray-500 px-4 py-2 rounded active:text-green-600 cursor-copy p-0 m-0"
-                      onClick={() => handleCopy(`${ref.name}-email`, ref.email)}
-                    >
-                      {copiedKey === `${ref.name}-email` ? (
-                        <Check
-                          size={16}
-                          className="animate-in zoom-in duration-200 text-green-500 p-0 m-0"
-                        />
-                      ) : (
-                        <Copy size={16} />
-                      )}
-                    </button>
-                  </div>
-                  {/* phone */}
-                  <div>
-                    Phone: <span className="phone link">{ref.phone}</span>
-                    <button
-                      onClick={() => handleCopy(`${ref.name}-phone`, ref.phone)}
-                      className=" text-gray-500 px-4 py-2 rounded active:text-green-600 cursor-copy p-0 m-0"
-                    >
-                      {copiedKey === `${ref.name}-phone` ? (
-                        <Check
-                          size={16}
-                          className="animate-in zoom-in duration-200 *:text-green-500 p-0 m-0"
-                        />
-                      ) : (
-                        <Copy size={16} />
-                      )}
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <h2>Contact Me</h2>
+            <p>
+              Shoot your DM on a project collab, ask about my references, tech
+              stack, or anything else. I&apos;ll get back to you as soon as
+              possible.
+            </p>
+
+            <hr className="formDivider" />
+
+            <form
+              id="contact-form"
+              ref={formRef}
+              className="contactForm"
+              onSubmit={handleSubmit}
+              noValidate
+            >
+              {/* Row: Name + Email */}
+              <div className="formRow">
+                <div className="formField">
+                  <label htmlFor="from_name">Full Name</label>
+                  <input
+                    id="from_name"
+                    name="from_name"
+                    type="text"
+                    placeholder="John Doe"
+                    required
+                    autoComplete="name"
+                  />
+                </div>
+                <div className="formField">
+                  <label htmlFor="reply_to">Email Address</label>
+                  <input
+                    id="reply_to"
+                    name="reply_to"
+                    type="email"
+                    placeholder="john@example.com"
+                    required
+                    autoComplete="email"
+                  />
+                </div>
+              </div>
+
+              {/* Topic */}
+              <div className="formField">
+                <label htmlFor="topic">Topic</label>
+                <select id="topic" name="topic" required>
+                  <option value="" disabled selected>
+                    Select a topic…
+                  </option>
+                  {TOPICS.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Message */}
+              <div className="formField">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Write your message here…"
+                  required
+                />
+              </div>
+
+              {/* Submit row */}
+              <div className="formSubmitRow">
+                {status === "success" && (
+                  <span className="formStatusMsg success">
+                    ✓ Message sent. I&apos;ll be in touch soon!
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="formStatusMsg error">✕ {errorMsg}</span>
+                )}
+                {status === "loading" && (
+                  <span className="formStatusMsg loading">Transmitting…</span>
+                )}
+                {status === "idle" && <span />}
+
+                <button
+                  id="contact-submit-btn"
+                  type="submit"
+                  className="formSubmitBtn"
+                  disabled={status === "loading"}
+                  aria-label="Send message"
+                >
+                  {status === "loading" ? (
+                    <>
+                      <Loader2 size={14} style={{ animation: "spin 1s linear infinite" }} />
+                      Sending
+                    </>
+                  ) : (
+                    <>
+                      <Send size={14} />
+                      Send Message
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
           </article>
+          {/* ─────────────────────────────────────────────── */}
         </div>
 
         <p style={{ marginTop: "2rem" }}>

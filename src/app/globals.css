@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 :root {
   color-scheme: light;
   --bg-canvas: #f3f4f6; /* Soft drafting paper background */
   --ink-border: #111111; /* Carbon black ink */
+
   --surface-card: #ffffff; /* Clean white card */
   --accent-blue: #2563eb; /* Technical drawing ink blue */
   --accent-blue-hover: #1d4ed8;
@@ -481,6 +487,154 @@ body {
   color: var(--muted);
 }
 
+/* ── Contact Form ───────────────────────────────────────── */
+
+.contactForm {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.formField label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  padding: 0.65rem 0.85rem;
+  border: 2px solid var(--ink-border);
+  border-radius: 4px;
+  background-color: var(--badge-bg);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  box-shadow: 2px 2px 0px 0px var(--ink-border);
+  outline: none;
+  transition:
+    box-shadow 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease;
+  resize: none;
+}
+
+.formField input::placeholder,
+.formField textarea::placeholder {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.formField input:focus,
+.formField select:focus,
+.formField textarea:focus {
+  background-color: var(--surface-card);
+  border-color: var(--accent-blue);
+  box-shadow: 3px 3px 0px 0px var(--accent-blue);
+}
+
+.formField textarea {
+  min-height: 130px;
+}
+
+.formSubmitRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.formStatusMsg {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.formStatusMsg.success {
+  color: #166534;
+  border-color: #166534;
+  background-color: #f0fdf4;
+}
+
+.formStatusMsg.error {
+  color: #991b1b;
+  border-color: #991b1b;
+  background-color: #fef2f2;
+}
+
+.formStatusMsg.loading {
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  background-color: var(--badge-bg);
+}
+
+.formSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid var(--ink-border);
+  border-radius: 4px;
+  background-color: var(--ink-border);
+  color: var(--surface-card);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px 0px var(--accent-blue);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.formSubmitBtn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--accent-blue);
+}
+
+.formSubmitBtn:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px var(--accent-blue);
+}
+
+.formSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formDivider {
+  width: 100%;
+  border: none;
+  border-top: 1px dashed var(--ink-border);
+  margin: 0.25rem 0;
+}
+
+/* ───────────────────────────────────────────────────────── */
+
 @media (max-width: 768px) {
   body {
     align-items: flex-start;
@@ -511,6 +665,10 @@ body {
   }
 
   .referenceList {
+    grid-template-columns: 1fr;
+  }
+
+  .formRow {
     grid-template-columns: 1fr;
   }
 }
