@@ -146,6 +146,7 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
             }}
           >
             src/{name.toLowerCase().replace(/\s+/g, "-")}.sh
+            {/*i will implement a date feature to indicate when the project was created*/}
           </span>
         </div>
         {/* Code Layout Lines */}

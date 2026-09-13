@@ -35,12 +35,12 @@ const thoughts: Thoughts[] = [
       "Constraints often sharpen creativity rather than stifle it. They force you to make better choices and stick to clearer priorities.",
     date: "2026-04-15",
   },
-  {
-    title: "Graduate",
-    message:
-      "I am a graduate of computer science from the Kwame Nkrumah University of Science and Technology.",
-    date: "2026-08-15",
-  },
+  // {
+  //   title: "Graduate",
+  //   message:
+  //     "I am a graduate of computer science from the Kwame Nkrumah University of Science and Technology.",
+  //   date: "2026-08-15",
+  // },
 ];
 
 export { thoughts };
