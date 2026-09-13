@@ -75,7 +75,7 @@ export default function DocumentsPage() {
             <p>
               Here is a list of my professional documents for your review. For
               more details please use the contact form below.{" "}
-              <span className="italic font-bold text-blue-600 dark:text-blue-500 text-xs">
+              <span className=" font-bold text-blue-600 dark:text-blue-500 text-xs">
                 (data privacy laws apply)
               </span>
             </p>
