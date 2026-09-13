@@ -1,11 +1,11 @@
-import { Brain, Code, FileText } from "lucide-react";
+import { Brain, Code, FileText, PersonStanding } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
   const fname = "etornam";
   const name = "Etornam Kordzo Ahiataku";
   const lead =
-    "Software Engineer • I build functional, User-centric systems • Exploring cloud and backend environments.";
+    "Software Engineer • I build functional, User-centric systems • Covering cloud and backend environments.";
 
   return (
     <main className="container">
@@ -171,9 +171,7 @@ export default function Home() {
             margin: 0,
           }}
         >
-          Fun Fact: I was searching for etornam.dev but it was taken, so I
-          decided to spell my first name backwards. It had a nice ring to it, so
-          I registered manrote.dev.
+          Fun Fact: Since etornam.dev was already claimed by a fellow great engineer, I did a quick string reversal on my name. Welcome to manrote.dev <PersonStanding size={16} className="" />
         </p>
       </footer>
     </main>
