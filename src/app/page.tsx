@@ -1,3 +1,4 @@
+import { Brain, Code, FileText } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -54,9 +55,15 @@ export default function Home() {
       </section>
 
       <nav className="Pagelinks" aria-label="Quick links">
-        <Link href="/projects">Projects</Link>
-        <Link href="/documents">Documents</Link>
-        <Link href="/thoughts">Thoughts</Link>
+        <Link href="/projects">
+          <Code size={24} /> Projects
+        </Link>
+        <Link href="/documents">
+          <FileText size={24} /> Documents
+        </Link>
+        <Link href="/thoughts">
+          <Brain size={24} /> Thoughts
+        </Link>
       </nav>
 
       <footer className="footer">
