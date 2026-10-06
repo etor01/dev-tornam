@@ -64,26 +64,7 @@ const projects = [
     github: "https://github.com/etor01",
     live: "https://pulse-check-api.onrender.com/",
   },
-  // {
-  //   id: 7,
-  //   name: "Signal Loop Board",
-  //   description:
-  //     "A custom electronics control board prototype designed to interface sensors with interactive physical installations.",
-  //   type: "hardware",
-  //   techStack: ["KiCad", "Arduino", "ESP32"],
-  //   github: "https://github.com/etor01",
-  //   live: "#",
-  // },
-  // {
-  //   id: 8,
-  //   name: "Temp Atlas Module",
-  //   description:
-  //     "A modular hardware logger equipped with multiple environmental sensors for precision monitoring and atmospheric data logging.",
-  //   type: "hardware",
-  //   techStack: ["Arduino", "Sensors", "I2C"],
-  //   github: "https://github.com/etor01",
-  //   live: "#",
-  // },
+
 ];
 
 function ProjectVisual({ type, name }: { type: string; name: string }) {
@@ -425,10 +406,10 @@ export default function ProjectsPage() {
               onClick={() => toggleType("software")}
               style={{
                 fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.75rem",
+                fontSize: "0.7rem",
                 fontWeight: 700,
                 textTransform: "uppercase",
-                padding: "0.5rem 1.1rem",
+                padding: "0.38rem 0.95rem",
                 border: "2px solid var(--ink-border)",
                 borderRadius: "999px",
                 backgroundColor: selectedTypes.includes("software")
@@ -448,10 +429,10 @@ export default function ProjectsPage() {
               onClick={() => toggleType("hardware")}
               style={{
                 fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.75rem",
+                fontSize: "0.7rem",
                 fontWeight: 700,
                 textTransform: "uppercase",
-                padding: "0.5rem 1.1rem",
+                padding: "0.38rem 0.95rem",
                 border: "2px solid var(--ink-border)",
                 borderRadius: "999px",
                 backgroundColor: selectedTypes.includes("hardware")
