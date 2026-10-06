@@ -397,55 +397,21 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div
-            className="filterGroup"
-            aria-label="Project filters"
-            style={{ display: "flex", gap: "0.8rem" }}
-          >
+          <div className="filterTrack" role="group" aria-label="Project filters">
             <button
               onClick={() => toggleType("software")}
-              style={{
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                padding: "0.38rem 0.95rem",
-                border: "2px solid var(--ink-border)",
-                borderRadius: "999px",
-                backgroundColor: selectedTypes.includes("software")
-                  ? "var(--accent-blue)"
-                  : "var(--surface-card)",
-                color: selectedTypes.includes("software")
-                  ? "var(--surface-card)"
-                  : "var(--text-primary)",
-                boxShadow: "2px 2px 0px 0px var(--ink-border)",
-                cursor: "pointer",
-                transition: "all 120ms ease",
-              }}
+              className={`filterToggleBtn ${selectedTypes.includes("software") ? "is-active" : ""}`}
+              aria-pressed={selectedTypes.includes("software")}
             >
+              <span className="toggleDot" aria-hidden="true" />
               Software
             </button>
             <button
               onClick={() => toggleType("hardware")}
-              style={{
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                padding: "0.38rem 0.95rem",
-                border: "2px solid var(--ink-border)",
-                borderRadius: "999px",
-                backgroundColor: selectedTypes.includes("hardware")
-                  ? "var(--accent-blue)"
-                  : "var(--surface-card)",
-                color: selectedTypes.includes("hardware")
-                  ? "var(--surface-card)"
-                  : "var(--text-primary)",
-                boxShadow: "2px 2px 0px 0px var(--ink-border)",
-                cursor: "pointer",
-                transition: "all 120ms ease",
-              }}
+              className={`filterToggleBtn ${selectedTypes.includes("hardware") ? "is-active" : ""}`}
+              aria-pressed={selectedTypes.includes("hardware")}
             >
+              <span className="toggleDot" aria-hidden="true" />
               Hardware
             </button>
           </div>

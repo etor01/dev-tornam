@@ -250,40 +250,69 @@ body {
   line-height: 1.5;
 }
 
-.filterGroup {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  font-family: var(--font-mono), monospace;
-}
-
-.filterGroup label {
+/* ── Filter track (segmented control) ─────────────────── */
+.filterTrack {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.45rem 0.9rem;
   border: 2px solid var(--ink-border);
   border-radius: 999px;
-  font-size: 0.85rem;
+  background-color: var(--badge-bg);
+  padding: 3px;
+  gap: 2px;
+}
+
+.filterToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: var(--surface-card);
+  letter-spacing: 0.05em;
   cursor: pointer;
+  user-select: none;
   transition:
-    transform 120ms ease,
-    box-shadow 120ms ease,
-    background-color 120ms ease,
-    color 120ms ease;
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 80ms ease;
 }
 
-.filterGroup label:hover {
-  transform: translate(-1px, -1px);
+.filterToggleBtn:active {
+  transform: scale(0.95);
 }
 
-.filterGroup input {
-  accent-color: var(--accent-blue);
-  cursor: pointer;
+.filterToggleBtn.is-active {
+  background-color: var(--accent-blue);
+  color: #ffffff;
 }
+
+.filterToggleBtn:not(.is-active):hover {
+  background-color: rgba(17, 17, 17, 0.06);
+  color: var(--text-primary);
+}
+
+/* LED dot */
+.toggleDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition:
+    background-color 150ms ease,
+    opacity 150ms ease;
+  background-color: rgba(17, 17, 17, 0.25);
+}
+
+.filterToggleBtn.is-active .toggleDot {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 
 .projectGrid {
   display: grid;
