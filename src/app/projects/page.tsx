@@ -103,16 +103,16 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "5px",
-            padding: "8px 12px",
-            borderBottom: "2px solid var(--ink-border)",
+            gap: "4px",
+            padding: "5px 9px",
+            borderBottom: "1.5px solid var(--ink-border)",
             background: "var(--badge-bg)",
           }}
         >
           <span
             style={{
-              width: "8px",
-              height: "8px",
+              width: "6px",
+              height: "6px",
               borderRadius: "50%",
               border: "1.5px solid var(--ink-border)",
               background: "transparent",
@@ -120,8 +120,8 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           ></span>
           <span
             style={{
-              width: "8px",
-              height: "8px",
+              width: "6px",
+              height: "6px",
               borderRadius: "50%",
               border: "1.5px solid var(--ink-border)",
               background: "transparent",
@@ -129,8 +129,8 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           ></span>
           <span
             style={{
-              width: "8px",
-              height: "8px",
+              width: "6px",
+              height: "6px",
               borderRadius: "50%",
               border: "1.5px solid var(--ink-border)",
               background: "transparent",
@@ -139,7 +139,7 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           <span
             style={{
               marginLeft: "auto",
-              fontSize: "0.6rem",
+              fontSize: "0.58rem",
               fontFamily: "var(--font-mono), monospace",
               color: "var(--muted)",
               textTransform: "uppercase",
@@ -152,13 +152,13 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
         {/* Code Layout Lines */}
         <div
           style={{
-            padding: "12px",
+            padding: "7px 9px",
             flexGrow: 1,
             display: "flex",
             flexDirection: "column",
-            gap: "6px",
+            gap: "4px",
             fontFamily: "var(--font-mono), monospace",
-            fontSize: "0.65rem",
+            fontSize: "0.6rem",
             color: "var(--text-secondary)",
             backgroundColor: "#ffffff",
           }}
@@ -168,24 +168,16 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           </div>
           <div
             style={{
-              width: "85%",
-              height: "4px",
+              width: "80%",
+              height: "3px",
               backgroundColor: "rgba(17, 17, 17, 0.08)",
               borderRadius: "2px",
             }}
           ></div>
           <div
             style={{
-              width: "60%",
-              height: "4px",
-              backgroundColor: "rgba(17, 17, 17, 0.08)",
-              borderRadius: "2px",
-            }}
-          ></div>
-          <div
-            style={{
-              width: "70%",
-              height: "4px",
+              width: "55%",
+              height: "3px",
               backgroundColor: "rgba(37, 99, 235, 0.2)",
               borderRadius: "2px",
             }}
@@ -193,7 +185,7 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           <div
             style={{
               width: "40%",
-              height: "4px",
+              height: "3px",
               backgroundColor: "rgba(17, 17, 17, 0.08)",
               borderRadius: "2px",
             }}
@@ -209,7 +201,7 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
           position: "relative",
           overflow: "hidden",
           backgroundColor: "#ffffff",
-          padding: "12px",
+          padding: "6px 8px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -219,7 +211,7 @@ function ProjectVisual({ type, name }: { type: string; name: string }) {
         <svg
           width="100%"
           height="100%"
-          style={{ opacity: 0.85, minHeight: "110px" }}
+          style={{ opacity: 0.85, minHeight: "72px" }}
           viewBox="0 0 300 120"
         >
           {/* Grid lines in background */}

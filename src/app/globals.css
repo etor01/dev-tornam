@@ -279,9 +279,9 @@ body {
 
 .projectGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .projectCard {
@@ -289,23 +289,23 @@ body {
   border-radius: 4px;
   overflow: hidden;
   background: var(--surface-card);
-  box-shadow: 4px 4px 0px 0px var(--ink-border);
+  box-shadow: 3px 3px 0px 0px var(--ink-border);
   transition:
-    transform 150ms ease,
-    box-shadow 150ms ease;
+    transform 140ms ease,
+    box-shadow 140ms ease;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .projectCard:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 7px 7px 0px 0px var(--ink-border);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px var(--ink-border);
 }
 
 .projectImage {
   width: 100%;
-  height: 150px;
+  height: 88px;
   object-fit: cover;
   display: block;
   background: var(--badge-bg);
@@ -313,7 +313,7 @@ body {
 }
 
 .projectBody {
-  padding: 1.5rem;
+  padding: 0.9rem 1rem 1rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -321,54 +321,57 @@ body {
 }
 
 .projectBody h2 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.35rem;
   font-family: var(--font-lora), Georgia, serif;
-  font-size: 1.35rem;
+  font-size: 1.08rem;
   font-weight: 700;
+  line-height: 1.25;
 }
 
 .projectBody p {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.75rem;
   color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  line-height: 1.45;
+  font-size: 0.8rem;
 }
 
 .projectTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.25rem;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
 }
 
 .techBadge {
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   font-weight: 700;
   text-transform: uppercase;
   background-color: var(--badge-bg);
   border: 1px solid var(--ink-border);
-  padding: 0.25rem 0.5rem;
+  padding: 0.15rem 0.4rem;
   border-radius: 2px;
   color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .projectActions {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.65rem;
 }
 
 .projectActions a {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
   font-family: var(--font-mono), monospace;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-primary);
   text-decoration: none;
-  border-bottom: 2px solid var(--ink-border);
+  border-bottom: 1.5px solid var(--ink-border);
   padding-bottom: 1px;
   transition:
     color 120ms ease,
@@ -666,7 +669,7 @@ body {
 
   .projectGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .referenceList {
