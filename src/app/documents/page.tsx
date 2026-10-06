@@ -116,7 +116,7 @@ export default function DocumentsPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View ↗
+                  View
                 </a>
               </div>
             </article>

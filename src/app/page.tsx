@@ -93,6 +93,7 @@ export default function Home() {
                 margin: "0.2rem 0 0",
                 fontSize: "0.85rem",
                 fontWeight: 700,
+                color: "var(--accent-blue)",
               }}
             >
               PORTFOLIO CARD
@@ -114,6 +115,7 @@ export default function Home() {
                 margin: "0.2rem 0 0",
                 fontSize: "0.85rem",
                 fontWeight: 700,
+                color: "var(--accent-blue)",
               }}
             >
               BLUEPRINT V1.0
@@ -128,13 +130,14 @@ export default function Home() {
                 color: "var(--text-primary)",
               }}
             >
-              ENGINEER
+              SOFT. ENGINEER
             </strong>
             <p
               style={{
                 margin: "0.2rem 0 0",
                 fontSize: "0.85rem",
                 fontWeight: 700,
+                color: "var(--accent-blue)",
               }}
             >
               E. K. AHIATAKU
@@ -156,6 +159,7 @@ export default function Home() {
                 margin: "0.2rem 0 0",
                 fontSize: "0.85rem",
                 fontWeight: 700,
+                color: "var(--accent-blue)",
               }}
             >
               &quot;{fname}&quot; (REVERSED)
