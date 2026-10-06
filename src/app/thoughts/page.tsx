@@ -33,12 +33,12 @@ export default function ThoughtsPage() {
                   style={{
                     fontFamily: "var(--font-mono), monospace",
                     fontSize: "0.75rem",
-                    fontWeight: 700,
+                    fontWeight: 500,
                     backgroundColor: "var(--badge-bg)",
                     border: "1px solid var(--ink-border)",
                     padding: "0.2rem 0.5rem",
                     borderRadius: "2px",
-                    color: "var(--muted)",
+                    color: "var(--thought-date-color)",
                     whiteSpace: "nowrap",
                   }}
                 >

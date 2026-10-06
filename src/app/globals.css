@@ -1,28 +1,38 @@
 @import "tailwindcss";
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 :root {
   color-scheme: light;
-  --bg-canvas: #f3f4f6; /* Soft drafting paper background */
-  --ink-border: #111111; /* Carbon black ink */
+  --bg-canvas: #f3f4f6;
+  /* Soft drafting paper background */
+  --ink-border: #111111;
+  /* Carbon black ink */
 
-  --surface-card: #ffffff; /* Clean white card */
-  --accent-blue: #2563eb; /* Technical drawing ink blue */
+  --surface-card: #ffffff;
+  /* Clean white card */
+  --accent-blue: #2563eb;
+  /* Technical drawing ink blue */
   --accent-blue-hover: #1d4ed8;
   --text-primary: #111111;
   --text-secondary: #4b5563;
   --muted: #6b7280;
   --badge-bg: #f9fafb;
-  --blueprint-grid: rgba(
-    37,
-    99,
-    235,
-    0.04
-  ); /* Grid color resembling engineering graph paper */
+  --thought-date-color: rgb(248, 114, 4);
+  --thought-title-color: rgb(21, 90, 194);
+  --blueprint-grid: rgba(37,
+      99,
+      235,
+      0.04);
+  /* Grid color resembling engineering graph paper */
 }
 
 * {
@@ -229,8 +239,8 @@ body {
 .pageHeader h1 {
   margin: 0;
   font-family: var(--font-lora), Georgia, serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 800;
+  font-size: clamp(1.4rem, 1.8vw, 2.6rem);
+  font-weight: 300;
 }
 
 .pageHeader p {
@@ -393,20 +403,16 @@ body {
 
 .documentItem,
 .thoughtCard {
-  border: 2px solid var(--ink-border);
-  border-radius: 4px;
   padding: 1.5rem;
   background: var(--surface-card);
-  box-shadow: 4px 4px 0px 0px var(--ink-border);
   transition:
     transform 150ms ease,
-    box-shadow 150ms ease;
 }
 
 .documentItem:hover,
 .thoughtCard:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px 0px var(--ink-border);
+  cursor: pointer;
 }
 
 .documentItem h2,
