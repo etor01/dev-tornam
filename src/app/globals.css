@@ -47,6 +47,10 @@ body {
   margin: 0;
   min-height: 100dvh;
   padding: clamp(1rem, 3vw, 3rem);
+  /* safe-area insets for notched phones */
+  padding-left: max(clamp(1rem, 3vw, 3rem), env(safe-area-inset-left));
+  padding-right: max(clamp(1rem, 3vw, 3rem), env(safe-area-inset-right));
+  padding-bottom: max(clamp(1rem, 3vw, 3rem), env(safe-area-inset-bottom));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -711,27 +715,41 @@ body {
   .pageShell {
     min-height: auto;
     padding: 1.5rem;
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
+  /* Compact row: small circular photo left, text right */
   .heroInner {
-    flex-direction: column-reverse;
+    flex-direction: row;
     align-items: flex-start;
+    gap: 1.25rem;
   }
 
   .profilePhotoWrapper {
-    width: 120px;
-    height: 120px;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
   .profilePhoto {
-    width: 120px;
-    height: 120px;
+    width: 88px;
+    height: 88px;
   }
 
+  /* 2-col nav grid; 3rd item spans both columns */
   .Pagelinks {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
+  }
+
+  .Pagelinks .pageLinkItem:last-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Larger tap targets for nav links */
+  .pageLinkItem {
+    min-height: 56px;
   }
 
   .pageHeader {
@@ -756,24 +774,64 @@ body {
 
 @media (max-width: 480px) {
   body {
-    padding: 0.75rem;
+    padding: 0.6rem;
   }
 
   .container,
   .pageShell {
-    padding: 1rem;
+    padding: 0.85rem;
+    gap: 1.25rem;
   }
 
+  /* Smaller name so it fits on 2 lines max */
   .name {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
   }
 
-  .socialLinks a {
-    width: 40px;
-    height: 40px;
+  /* Fix: was using stale .socialLinks a selector */
+  .socialLink {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Even smaller circular photo on very small screens */
+  .profilePhotoWrapper {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+
+  .profilePhoto {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Drop uppercase on footer — harder to read at small sizes */
+  .footerCopyright {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.7rem;
   }
 
   .footer {
     font-size: 0.8rem;
+  }
+
+  /* Full-width single-column nav on smallest screens */
+  .Pagelinks {
+    grid-template-columns: 1fr;
+  }
+
+  .Pagelinks .pageLinkItem:last-child {
+    grid-column: auto;
+  }
+
+  .pageLinkItem {
+    min-height: 52px;
+    font-size: 0.85rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
   }
 }
