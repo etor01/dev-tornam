@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "manrote.dev",
-  description: "As if we pay attention to read the small details.",
+  title: "etornam.me",
+  description: "As if we pay attention to the small details.",
 };
 
 export default function RootLayout({

@@ -79,11 +79,42 @@ body {
   width: 100%;
 }
 
-.nameBox {
+.heroInner {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nameBox {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.profilePhotoWrapper {
+  flex-shrink: 0;
+  border: 2px solid var(--ink-border);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0px 0px var(--muted);
+}
+
+.profilePhoto {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(100%);
+  transition: filter 300ms ease;
+}
+
+.profilePhoto:hover {
+  filter: grayscale(0%);
 }
 
 .name {
@@ -103,7 +134,7 @@ body {
   gap: 0.8rem;
 }
 
-.socialLinks a {
+.socialLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -115,22 +146,22 @@ body {
   text-decoration: none;
   transition:
     transform 120ms ease,
-
     box-shadow 120ms ease,
     background-color 120ms ease;
 }
 
-.socialLinks a:hover {
+.socialLink:hover {
   cursor: pointer;
   background-color: var(--badge-bg);
   transform: translate(-2px, -2px);
   box-shadow: 4px 4px 0px 0px var(--muted);
 }
 
-.socialLinks img {
+.socialIcon {
   width: 20px;
   height: 20px;
   object-fit: contain;
+  display: block;
 }
 
 .lead {
@@ -149,7 +180,7 @@ body {
   width: 100%;
 }
 
-.Pagelinks a {
+.pageLinkItem {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,7 +196,6 @@ body {
   border-radius: 4px;
   border: 2px solid var(--ink-border);
   background-color: var(--surface-card);
-  /* box-shadow: 4px 4px 0px 0px var(--muted); */
   transition:
     transform 150ms ease,
     box-shadow 150ms ease,
@@ -173,11 +203,11 @@ body {
     color 150ms ease;
 }
 
-.Pagelinks a svg {
+.pageLinkIcon {
   flex-shrink: 0;
 }
 
-.Pagelinks a:hover {
+.pageLinkItem:hover {
   cursor: pointer;
   background-color: var(--accent-blue);
   color: var(--surface-card);
@@ -194,8 +224,12 @@ body {
   line-height: 1.6;
 }
 
-.footer p {
+.footerCopyright {
   margin: 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .contentPage {
@@ -678,6 +712,21 @@ body {
     min-height: auto;
     padding: 1.5rem;
     gap: 2rem;
+  }
+
+  .heroInner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .profilePhotoWrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profilePhoto {
+    width: 120px;
+    height: 120px;
   }
 
   .Pagelinks {
