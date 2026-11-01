@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getProjectBySlug } from "@/lib/db/projects";
 import { renderMarkdown } from "@/lib/utils/markdown";
+import ProjectDiagram from "@/app/components/diagrams/ProjectDiagram";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -231,6 +232,19 @@ export default async function ProjectDetailPage({ params }: Props) {
             />
           </div>
         )}
+
+        {/* Interactive Architecture Schematic */}
+        <div
+          style={{
+            margin: "1.75rem 0",
+            borderRadius: "6px",
+            overflow: "hidden",
+            border: "1.5px solid var(--ink-border)",
+            boxShadow: "var(--shadow-card)",
+          }}
+        >
+          <ProjectDiagram slug={slug} />
+        </div>
 
         {/* Markdown Content */}
         <section

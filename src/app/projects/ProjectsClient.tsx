@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import ProjectDiagram from "../components/diagrams/ProjectDiagram";
 
 export interface ProjectItem {
   id: string | number;
@@ -15,7 +16,19 @@ export interface ProjectItem {
   year?: number | null;
 }
 
-function ProjectVisual({ type, name }: { type: string; name: string }) {
+function ProjectVisual({
+  type,
+  name,
+  slug,
+}: {
+  type: string;
+  name: string;
+  slug: string;
+}) {
+  if (slug === "mediscan" || slug === "agriboost") {
+    return <ProjectDiagram slug={slug} />;
+  }
+
   if (type === "software") {
     return (
       <div
@@ -373,7 +386,11 @@ export default function ProjectsClient({
         <div className="projectGrid">
           {visibleProjects.map((project) => (
             <article key={project.id} className="projectCard">
-              <ProjectVisual type={project.type} name={project.name} />
+              <ProjectVisual
+                type={project.type}
+                name={project.name}
+                slug={project.slug}
+              />
               <div className="projectBody">
                 <div>
                   <div
