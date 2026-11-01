@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import MobileNavBar from "./components/navigation/MobileNavBar";
 
 const lora = Lora({
   subsets: ["latin"],
@@ -26,8 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lora.variable} ${jetbrainsMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <MobileNavBar />
+      </body>
     </html>
   );
 }
+
 
