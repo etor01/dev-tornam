@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getSiteSettings } from "@/lib/db/settings";
 import { getFeaturedProjects } from "@/lib/db/projects";
+import ProjectDiagram from "./components/diagrams/ProjectDiagram";
 
 // Revalidate public homepage every 60 seconds (ISR) or on demand via CMS mutations
 export const revalidate = 60;
@@ -60,6 +61,20 @@ export default async function Home() {
       <section className="hero" aria-label="Profile introduction">
         <div className="heroInner">
           <div className="nameBox">
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "-0.5rem" }}>
+              <span
+                style={{
+                  fontFamily: "var(--font-mono), monospace",
+                  fontSize: "0.68rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--accent-blue)",
+                }}
+              >
+                ENGINEERING SPEC // SYSTEMS &amp; BACKEND
+              </span>
+            </div>
             <h1 className="name">{name}</h1>
 
             <div className="socialLinks" aria-label="Social links">
@@ -157,6 +172,7 @@ export default async function Home() {
                 className="projectCard"
                 style={{ height: "auto" }}
               >
+                <ProjectDiagram slug={project.slug} />
                 <div className="projectBody" style={{ padding: "1.1rem" }}>
                   <div>
                     <div
