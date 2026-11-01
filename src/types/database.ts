@@ -21,6 +21,7 @@ export interface Database {
           email?: string;
           created_at?: string;
         };
+        Relationships: [];
       };
       projects: {
         Row: {
@@ -86,6 +87,7 @@ export interface Database {
           updated_at?: string;
           published_at?: string | null;
         };
+        Relationships: [];
       };
       notes: {
         Row: {
@@ -130,6 +132,7 @@ export interface Database {
           updated_at?: string;
           published_at?: string | null;
         };
+        Relationships: [];
       };
       lab_experiments: {
         Row: {
@@ -171,6 +174,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       site_settings: {
         Row: {
@@ -188,6 +192,7 @@ export interface Database {
           value?: string | null;
           updated_at?: string;
         };
+        Relationships: [];
       };
     };
     Views: Record<string, never>;

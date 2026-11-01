@@ -835,3 +835,205 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* ── Content Markdown & Detail Article Styles ────────────────────────────── */
+.detailArticle {
+  margin-top: 1.5rem;
+}
+
+.detailMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.detailMetaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  background-color: var(--badge-bg);
+  border: 1px solid var(--ink-border);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font-mono), monospace;
+  border: 1px solid var(--ink-border);
+}
+
+.statusPill.active {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.statusPill.wip {
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.statusPill.archived {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.contentBody {
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.mdH1 {
+  font-size: 1.75rem;
+  font-family: var(--font-lora), Georgia, serif;
+  margin: 2rem 0 0.8rem;
+  color: var(--text-primary);
+}
+
+.mdH2 {
+  font-size: 1.35rem;
+  font-family: var(--font-lora), Georgia, serif;
+  margin: 1.6rem 0 0.6rem;
+  color: var(--text-primary);
+}
+
+.mdH3 {
+  font-size: 1.15rem;
+  font-family: var(--font-lora), Georgia, serif;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--text-primary);
+}
+
+.mdParagraph {
+  margin: 0 0 1.25rem;
+}
+
+.mdQuote {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 3px solid var(--accent-blue);
+  background: var(--badge-bg);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.mdUl {
+  margin: 0 0 1.25rem 1.25rem;
+  padding: 0;
+}
+
+.mdLi {
+  margin-bottom: 0.4rem;
+}
+
+.mdInlineCode {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85em;
+  background: var(--badge-bg);
+  border: 1px solid rgba(17, 17, 17, 0.15);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  color: var(--accent-blue);
+}
+
+.mdCodeBlock {
+  background: #111111;
+  color: #f3f4f6;
+  padding: 1.25rem;
+  border-radius: 4px;
+  border: 2px solid var(--ink-border);
+  overflow-x: auto;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 1.5rem 0;
+}
+
+.mdFigure {
+  margin: 1.5rem 0;
+}
+
+.mdImage {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--ink-border);
+  border-radius: 4px;
+  display: block;
+}
+
+.mdCaption {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.mdLink {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mdLink:hover {
+  color: var(--accent-blue-hover);
+}
+
+.mdHr {
+  border: none;
+  border-top: 2px dashed var(--ink-border);
+  margin: 2rem 0;
+}
+
+/* Featured Projects on Homepage */
+.featuredProjectsSection {
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--ink-border);
+}
+
+.featuredProjectsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.featuredProjectsTitle {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.featuredProjectsViewAll {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.featuredProjectsViewAll:hover {
+  text-decoration: underline;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}

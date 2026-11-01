@@ -7,17 +7,24 @@ import { NextResponse, type NextRequest } from "next/server";
  * Responsibilities:
  * 1. Refresh the Supabase session cookie when it expires (required by @supabase/ssr).
  * 2. Protect /admin/** routes: redirect unauthenticated visitors to /admin/login.
- * 3. Redirect already-authenticated users away from /admin/login.
+ * 3. Redirect already-authenticated admin users away from /admin/login to /admin.
  *
- * NOTE: Middleware is a first line of defence for UX, not the security boundary.
- * Every server action and route handler independently calls requireAdmin().
+ * NOTE: Middleware is a UX convenience, not the primary security boundary.
+ * Protected server actions and route handlers independently call requireAdmin().
  */
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  ) {
+    return supabaseResponse;
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
@@ -41,24 +48,48 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { pathname } = request.nextUrl;
+  const rawPathname = request.nextUrl.pathname;
+  const pathname = rawPathname.length > 1 && rawPathname.endsWith("/")
+    ? rawPathname.slice(0, -1)
+    : rawPathname;
+
+  // Helper to construct a redirect response that preserves refreshed cookies
+  function redirectWithCookies(destinationUrl: URL) {
+    const redirectResponse = NextResponse.redirect(destinationUrl);
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirectResponse.cookies.set(cookie.name, cookie.value);
+    });
+    return redirectResponse;
+  }
 
   // Protect /admin routes (except /admin/login)
   if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
     if (!user) {
       const loginUrl = request.nextUrl.clone();
       loginUrl.pathname = "/admin/login";
-      loginUrl.searchParams.set("redirectTo", pathname);
-      return NextResponse.redirect(loginUrl);
+      loginUrl.searchParams.set("redirectTo", rawPathname);
+      return redirectWithCookies(loginUrl);
     }
   }
 
-  // Redirect authenticated users away from login page
+  // Redirect authenticated admin users away from login page
   if (pathname === "/admin/login" && user) {
-    const dashboardUrl = request.nextUrl.clone();
-    dashboardUrl.pathname = "/admin";
-    dashboardUrl.search = "";
-    return NextResponse.redirect(dashboardUrl);
+    try {
+      const { data: adminRow } = await supabase
+        .from("admins")
+        .select("id")
+        .eq("id", user.id)
+        .single();
+
+      if (adminRow) {
+        const dashboardUrl = request.nextUrl.clone();
+        dashboardUrl.pathname = "/admin";
+        dashboardUrl.search = "";
+        return redirectWithCookies(dashboardUrl);
+      }
+    } catch {
+      // In case of error querying admins in middleware, let the user view the page
+    }
   }
 
   return supabaseResponse;
